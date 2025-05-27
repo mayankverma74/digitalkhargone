@@ -19,3 +19,5 @@ EXPOSE 8080
 # Start the app
 CMD ["node", "server.js"]
  
+ENV PORT=8080
+ENV NODE_ENV=production
