@@ -24,44 +24,46 @@ document.addEventListener('DOMContentLoaded', () => {
                 const formData = {
                     fullName: document.getElementById('fullName').value.trim(),
                     phone: document.getElementById('phone').value.trim(),
-                    email: document.getElementById('email').value.trim(),
+                    email: document.getElementById('email').value.trim() || '', // Email is optional
                     websiteType: document.getElementById('websiteType').value,
                     budget: document.getElementById('budget').value
                 };
 
-                // Validate required fields
-                for (const [key, value] of Object.entries(formData)) {
-                    if (!value) {
-                        throw new Error(`${key} is required`);
+                // Validate required fields (excluding email)
+                const requiredFields = ['fullName', 'phone', 'websiteType', 'budget'];
+                for (const field of requiredFields) {
+                    if (!formData[field]) {
+                        throw new Error(`${field} is required`);
                     }
                 }
 
-                // Validate email format
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(formData.email)) {
-                    throw new Error('Please enter a valid email address');
+                // Only validate email if provided
+                if (formData.email) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(formData.email)) {
+                        throw new Error('Please enter a valid email address');
+                    }
                 }
 
-                // Determine API URL based on environment
-                const API_URL = window.location.hostname === 'localhost' 
-                    ? 'http://localhost:5000/api/contact'
-                    : 'https://digitalkhargone.in/api/contact';
+                // Update API endpoint with correct Cloud Run URL
+                const apiUrl = 'https://digitalkhargone-687413132546.us-central1.run.app/api/contact';
 
-                const response = await fetch(API_URL, {
+                const response = await fetch(apiUrl, {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
                     },
-                    body: JSON.stringify(formData)
+                    body: JSON.stringify(formData),
+                    mode: 'cors'
                 });
 
-                const data = await response.json();
-
                 if (!response.ok) {
-                    throw new Error(data.message || 'Form submission failed');
+                    const errorData = await response.json();
+                    throw new Error(errorData.message || 'Failed to submit form');
                 }
 
-                // Show success modal
+                // Show success message
                 if (successModal) {
                     successModal.style.display = 'flex';
                     successModal.style.opacity = '1';
@@ -73,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             } catch (error) {
                 console.error('Form submission error:', error);
-                alert(error.message || 'Failed to submit form. Please try again or contact us directly.');
+                alert(`Failed to submit form: ${error.message}. Please try again or contact us directly at +91 6266 413268`);
             }
         });
     }

@@ -29,7 +29,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 const contactSchema = new mongoose.Schema({
     fullName: { type: String, required: true },
     phone: { type: String, required: true },
-    email: { type: String, required: true },
+    email: { type: String, required: false }, // Make email optional
     websiteType: { type: String, required: true },
     budget: { type: String, required: true },
     timestamp: { type: Date, default: Date.now }
@@ -42,28 +42,30 @@ app.post('/api/contact', async (req, res) => {
     try {
         const { fullName, phone, email, websiteType, budget } = req.body;
 
-        // Validate all required fields
-        if (!fullName || !phone || !email || !websiteType || !budget) {
+        // Validate required fields (excluding email)
+        if (!fullName || !phone || !websiteType || !budget) {
             return res.status(400).json({
                 success: false,
-                message: 'All fields are required'
+                message: 'Name, phone, website type and budget are required'
             });
         }
 
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            return res.status(400).json({
-                success: false,
-                message: 'Invalid email format'
-            });
+        // Email validation only if provided
+        if (email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                return res.status(400).json({
+                    success: false,
+                    message: 'Invalid email format'
+                });
+            }
         }
 
         // Create and save new contact
         const newContact = new Contact({
             fullName,
             phone,
-            email,
+            email: email || '', // Store empty string if no email provided
             websiteType,
             budget
         });
