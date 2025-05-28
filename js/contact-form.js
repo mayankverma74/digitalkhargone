@@ -1,81 +1,79 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Get URL parameters
+    const contactForm = document.getElementById('contactForm');
+    const successModal = document.getElementById('successModal');
+
+    // Get URL parameters for pre-filling form
     const urlParams = new URLSearchParams(window.location.search);
     const websiteType = urlParams.get('type');
     const budget = urlParams.get('budget');
 
-    // Set name attributes immediately when page loads
-    document.getElementById('fullName').setAttribute('name', 'fullName');
-    document.getElementById('phone').setAttribute('name', 'phone');
-    document.getElementById('email').setAttribute('name', 'email');
-    document.getElementById('websiteType').setAttribute('name', 'websiteType');
-    document.getElementById('budget').setAttribute('name', 'budget');
-
-    // Pre-select the options if parameters exist
+    // Pre-fill form if parameters exist
     if (websiteType) {
-        const websiteTypeSelect = document.getElementById('websiteType');
-        websiteTypeSelect.value = websiteType;
+        document.getElementById('websiteType').value = websiteType;
     }
-
     if (budget) {
-        const budgetSelect = document.getElementById('budget');
-        budgetSelect.value = budget;
+        document.getElementById('budget').value = budget;
     }
-
-    const contactForm = document.getElementById('contactForm');
-    const successModal = document.getElementById('successModal');
 
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
+
             try {
-                // Validate form data before submission
-                const fullName = document.getElementById('fullName').value;
-                const phone = document.getElementById('phone').value;
-                const email = document.getElementById('email').value;
-                const websiteType = document.getElementById('websiteType').value;
-                const budget = document.getElementById('budget').value;
-
-                // Check if any field is empty
-                if (!fullName || !phone || !websiteType || !budget) {
-                    throw new Error('Please fill all fields');
-                }
-
-                const data = {
-                    fullName,
-                    phone,
-                    email,
-                    websiteType,
-                    budget
+                // Get form data
+                const formData = {
+                    fullName: document.getElementById('fullName').value.trim(),
+                    phone: document.getElementById('phone').value.trim(),
+                    email: document.getElementById('email').value.trim(),
+                    websiteType: document.getElementById('websiteType').value,
+                    budget: document.getElementById('budget').value
                 };
 
-                const response = await fetch('http://localhost:5000/api/contact', {
+                // Validate required fields
+                for (const [key, value] of Object.entries(formData)) {
+                    if (!value) {
+                        throw new Error(`${key} is required`);
+                    }
+                }
+
+                // Validate email format
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(formData.email)) {
+                    throw new Error('Please enter a valid email address');
+                }
+
+                // Determine API URL based on environment
+                const API_URL = window.location.hostname === 'localhost' 
+                    ? 'http://localhost:5000/api/contact'
+                    : 'https://digitalkhargone.in/api/contact';
+
+                const response = await fetch(API_URL, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify(data)
+                    body: JSON.stringify(formData)
                 });
 
+                const data = await response.json();
+
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    throw new Error(data.message || 'Form submission failed');
                 }
 
-                const result = await response.json();
-                console.log('Form submitted successfully:', result);
-                
                 // Show success modal
-                successModal.style.display = 'flex';
-                setTimeout(() => {
+                if (successModal) {
+                    successModal.style.display = 'flex';
                     successModal.style.opacity = '1';
-                }, 10);
+                    contactForm.reset();
+                } else {
+                    alert('Form submitted successfully!');
+                    contactForm.reset();
+                }
 
-                // Reset form
-                contactForm.reset();
             } catch (error) {
                 console.error('Form submission error:', error);
-                alert(error.message || 'Failed to submit form. Please try again.');
+                alert(error.message || 'Failed to submit form. Please try again or contact us directly.');
             }
         });
     }
