@@ -14,10 +14,10 @@ RUN npm install
 COPY . .
 
 # Expose Cloud Run's default port
-EXPOSE 8080
+EXPOSE 5000
 
 # Start the app
 CMD ["node", "server.js"]
  
-ENV PORT=8080
+ENV PORT=5000
 ENV NODE_ENV=production

@@ -457,25 +457,35 @@
 
         type();
        document.querySelectorAll('.service-cta').forEach(button => {
-           button.addEventListener('click', async (e) => {
-               e.preventDefault();
-               const href = e.target.getAttribute('href');
-               
-               // Show loader
-               const loader = document.querySelector('.loader-container');
-               const mainContent = document.querySelector('main');
-               
-               // Hide main content immediately
-               mainContent.style.opacity = '0';
-               loader.style.display = 'flex';
-               loader.style.opacity = '1';
-               
-               // Prevent scrolling
-               document.body.style.overflow = 'hidden';
-               
-               // Wait for animation and redirect
-               await new Promise(resolve => setTimeout(resolve, 1900));
-               window.location.href = href;
+           ['click', 'touchend'].forEach(eventType => {
+               button.addEventListener(eventType, async (e) => {
+                   e.preventDefault();
+                   e.stopPropagation(); // Prevent event bubbling
+                   
+                   const href = e.currentTarget.getAttribute('href'); // Use currentTarget instead of target
+                   
+                   try {
+                       // Show loader
+                       const loader = document.querySelector('.loader-container');
+                       const mainContent = document.querySelector('main');
+                       
+                       // Hide main content immediately
+                       mainContent.style.opacity = '0';
+                       loader.style.display = 'flex';
+                       loader.style.opacity = '1';
+                       
+                       // Prevent scrolling
+                       document.body.style.overflow = 'hidden';
+                       
+                       // Wait for animation and redirect
+                       await new Promise(resolve => setTimeout(resolve, 1900));
+                       window.location.href = href;
+                   } catch (error) {
+                       console.error('Navigation error:', error);
+                       // Fallback direct navigation
+                       window.location.href = href;
+                   }
+               }, { passive: false }); // Important for touch events
            });
        });
     </script>
