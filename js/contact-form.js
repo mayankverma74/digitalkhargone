@@ -4,6 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const websiteType = urlParams.get('type');
     const budget = urlParams.get('budget');
 
+    // Set name attributes immediately when page loads
+    document.getElementById('fullName').setAttribute('name', 'fullName');
+    document.getElementById('phone').setAttribute('name', 'phone');
+    document.getElementById('email').setAttribute('name', 'email');
+    document.getElementById('websiteType').setAttribute('name', 'websiteType');
+    document.getElementById('budget').setAttribute('name', 'budget');
+
     // Pre-select the options if parameters exist
     if (websiteType) {
         const websiteTypeSelect = document.getElementById('websiteType');
@@ -23,21 +30,25 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             
             try {
-                const formData = new FormData(contactForm);
-                const data = {
-                    fullName: formData.get('fullName'),
-                    phone: formData.get('phone'),
-                    email: formData.get('email'),
-                    websiteType: formData.get('websiteType'),
-                    budget: formData.get('budget')
-                };
+                // Validate form data before submission
+                const fullName = document.getElementById('fullName').value;
+                const phone = document.getElementById('phone').value;
+                const email = document.getElementById('email').value;
+                const websiteType = document.getElementById('websiteType').value;
+                const budget = document.getElementById('budget').value;
 
-                // Add name attributes to match FormData
-                document.getElementById('fullName').setAttribute('name', 'fullName');
-                document.getElementById('phone').setAttribute('name', 'phone');
-                document.getElementById('email').setAttribute('name', 'email');
-                document.getElementById('websiteType').setAttribute('name', 'websiteType');
-                document.getElementById('budget').setAttribute('name', 'budget');
+                // Check if any field is empty
+                if (!fullName || !phone || !websiteType || !budget) {
+                    throw new Error('Please fill all fields');
+                }
+
+                const data = {
+                    fullName,
+                    phone,
+                    email,
+                    websiteType,
+                    budget
+                };
 
                 const response = await fetch('http://localhost:5000/api/contact', {
                     method: 'POST',
@@ -64,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 contactForm.reset();
             } catch (error) {
                 console.error('Form submission error:', error);
-                alert('Failed to submit form. Please try again.');
+                alert(error.message || 'Failed to submit form. Please try again.');
             }
         });
     }
