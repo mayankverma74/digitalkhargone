@@ -1724,3 +1724,22 @@ html {
         font-size: 1.1rem;  /* Increased from 1rem */
     }
 }
+/* Adjust popular badge size */
+.popular-badge {
+    font-size: 0.8rem;  /* Reduced from default */
+    padding: 0.2rem 0.6rem;  /* Slightly reduced padding */
+}
+/* Add touch interaction improvements for mobile */
+@media screen and (max-width: 768px) {
+    .service-cta {
+        position: relative;
+        padding: 1.2rem;  /* Increased padding for better touch area */
+        touch-action: manipulation;  /* Improve touch handling */
+        -webkit-tap-highlight-color: transparent;  /* Remove tap highlight */
+    }
+
+    /* Add a small delay to distinguish between scroll and tap */
+    .service-cta:active {
+        transition-delay: 100ms;
+    }
+}
