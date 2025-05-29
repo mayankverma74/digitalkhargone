@@ -141,18 +141,16 @@ body {
     align-items: center;
     gap: 0.5rem;
     padding: 0.8rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    border: 1px solid rgba(0, 255, 136, 0.2);
+    border: 1px solid rgba(192, 192, 192, 0.3);  /* Changed to silver with transparency */
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    /* ...existing code... */
 }
 
-.feature-icon {
-    font-size: 1.2rem;
-}
-
-.feature-text {
-    font-size: 0.9rem;
-    color: #eee;
+/* Add hover effect to make it more interactive */
+.feature:hover {
+    border-color: rgba(192, 192, 192, 0.5);  /* Brighter silver on hover */
+    box-shadow: 0 0 15px rgba(192, 192, 192, 0.1);  /* Subtle silver glow */
 }
 
 .cta-button {
@@ -1741,5 +1739,186 @@ html {
     /* Add a small delay to distinguish between scroll and tap */
     .service-cta:active {
         transition-delay: 100ms;
+    }
+}
+/* Mobile-specific adjustments for vision card */
+@media screen and (max-width: 768px) {
+    .vision-content {
+        width: 100%;  /* Increased from default */
+        margin: 0 auto;
+        padding: 1rem;
+    }
+
+    .vision-card {
+        width: 100%;
+        margin: 0 auto 2rem;
+        padding: 1.5rem;
+    }
+
+    .mission-text {
+        width: 100%;
+        padding: 0 0.5rem;
+    }
+
+    .about-container {
+        padding: 1rem 0;
+    }
+}
+/* Typewriter animation for specific text */
+.highlight-text {
+    color: var(--primary);
+    text-shadow: 0 0 20px var(--primary);
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid var(--primary);
+    animation: typing 3.5s steps(30, end) infinite,
+             blink 0.75s step-end infinite;
+    width: 0;
+    animation-fill-mode: forwards;
+    
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: var(--primary) }
+}
+
+/* Responsive adjustment */
+@media screen and (max-width: 768px) {
+    .highlight-text {
+        font-size: calc(1.5rem + 2.5vw);
+    }
+}
+/* Enhanced tag styling */
+.hero-subtitle {
+    position: relative;
+    display: inline-block;
+    padding: 8px 16px;
+    background: linear-gradient(45deg, rgba(0, 255, 136, 0.1), rgba(149, 0, 255, 0.1));
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 1rem 0;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    animation: tagFloat 3s ease-in-out infinite;
+}
+
+.hero-subtitle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #ffffffcc,
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+.tag-text {
+    background: linear-gradient(45deg, #00ff88, #9500ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+}
+
+/* Animations */
+@keyframes tagFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 200%; }
+}
+
+/* Responsive adjustments */
+ 
+    hero-subtitle{
+        font-size: 0.9rem;
+        padding: 6px 12px;
+        margin: 0.8rem 0;
+    }
+    /* Feature boxes styling and animation */
+.hero-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid rgba(192, 192, 192, 0.3);  /* Changed to silver with transparency */
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    /* ...existing code... */
+}
+
+/* Add hover effect to make it more interactive */
+.feature:hover {
+    border-color: rgba(192, 192, 192, 0.5);  /* Brighter silver on hover */
+    box-shadow: 0 0 15px rgba(192, 192, 192, 0.1);  /* Subtle silver glow */
+}
+
+.feature.animate {
+    animation: featureAppear 0.8s ease forwards; /* Increased from 0.5s */
+}
+
+.feature:nth-child(1).animate { animation-delay: 2.8s; } /* Increased from 0.3s */
+.feature:nth-child(2).animate { animation-delay: 3.5s; } /* Increased from 0.6s */
+.feature:nth-child(3).animate { animation-delay: 4.5s; } /* Increased from 0.9s */
+
+.feature-icon {
+    font-size: 1.8rem;
+    color: var(--primary);
+    filter: drop-shadow(0 0 8px rgba(0, 255, 136, 0.3));
+    transition: transform 0.35s ease;
+}
+
+.feature:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.feature-text {
+    font-size: 0.95rem;
+    color: #eee;
+}
+
+@keyframes featureAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .hero-features {
+        gap: 1rem;
+    }
+    
+    .feature {
+        padding: 0.8rem;
     }
 }

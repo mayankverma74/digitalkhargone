@@ -129,15 +129,17 @@
                 <p class="hero-subtitle">First Ever Professional Web Development Agency in Khargone</p>
                 <div class="hero-features">
                     <div class="feature">
-                        <span class="feature-icon">💻</span>
-                        <span class="feature-text">Modern Websites</span>
+                        <i class="feature-icon fa-solid fa-laptop-code" style="color: #00ff88;"></i>
+                        <span class="feature-text">Modern Website</span>
                     </div>
+                    
                     <div class="feature">
-                        <span class="feature-icon">🚀</span>
+                        <i class="feature-icon devicon-react-plain colored"></i>
                         <span class="feature-text">Fast Delivery</span>
                     </div>
+                    
                     <div class="feature">
-                        <span class="feature-icon">💰</span>
+                        <i class="feature-icon devicon-androidstudio-plain colored"></i>
                         <span class="feature-text">Budget Friendly</span>
                     </div>
                 </div>
@@ -524,6 +526,17 @@
            });
        });
     </script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Add animation class to features after a small delay
+    setTimeout(() => {
+        const features = document.querySelectorAll('.feature');
+        features.forEach(feature => {
+            feature.classList.add('animate');
+        });
+    }, 100);
+});
+</script>
 </body>
 </html>
 <footer class="footer">
