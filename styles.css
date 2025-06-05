@@ -1943,17 +1943,24 @@ html {
     .service-cta {
         position: relative;
         padding: 1.2rem;
-        touch-action: manipulation;
+        touch-action: none;  /* Prevent all default touch actions */
         -webkit-tap-highlight-color: transparent;
-        transition-delay: 100ms;
+        transition-delay: 200ms;  /* Increased delay */
     }
 
     .service-card {
-        touch-action: pan-y pinch-zoom;  /* Allow vertical scrolling and pinch zoom only */
+        touch-action: pan-y pinch-zoom;
+        pointer-events: none;  /* Disable pointer events on card */
     }
 
-    /* Add a small delay and touch threshold */
+    /* Service CTA specific touch handling */
+    .service-cta-wrapper {
+        position: relative;
+        pointer-events: auto;  /* Re-enable pointer events */
+    }
+
+    /* Add touch threshold */
     .service-cta:active {
-        transition-delay: 200ms;  /* Increased delay for better distinction */
+        transition-delay: 300ms;  /* Longer delay for better distinction */
     }
 }
