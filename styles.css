@@ -534,9 +534,9 @@ body {
     right: 1rem;
     background: var(--primary);
     color: #000;
-    padding: 0.3rem 0.8rem;
+    
     border-radius: 20px;
-    font-size: 0.8rem;
+    font-size: 0.1rem;
     font-weight: 600;
 }
 
@@ -1920,5 +1920,40 @@ html {
     
     .feature {
         padding: 0.8rem;
+    }
+}
+/* Add this style block after your existing styles in the head section */
+
+.popular-badge {
+    font-size: 0.70rem;  /* Reduced from default size */
+    padding: 1px 12px;    /* Slightly smaller padding */
+    transform: scale(0.9); /* Slightly reduce overall size */
+    margin-top: -0.5px;
+}
+@media screen and (max-width: 768px) {
+    .back-home{
+        font-size: 0.3rem;
+        padding: 0.5rem 5rem;
+        transform: scale(0.8);
+        margin-top: -10px;
+        margin-left: -20px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .service-cta {
+        position: relative;
+        padding: 1.2rem;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+        transition-delay: 100ms;
+    }
+
+    .service-card {
+        touch-action: pan-y pinch-zoom;  /* Allow vertical scrolling and pinch zoom only */
+    }
+
+    /* Add a small delay and touch threshold */
+    .service-cta:active {
+        transition-delay: 200ms;  /* Increased delay for better distinction */
     }
 }
