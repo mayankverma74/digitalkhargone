@@ -1,0 +1,31 @@
+# robots.txt for digitalkhargone.in
+User-agent: *
+Allow: /
+Allow: /favicon.ico
+Allow: /favicon.svg
+Allow: /favicon-*.png
+Allow: /apple-touch-icon.png
+Allow: /site.webmanifest
+
+# Important pages
+Allow: /index.html
+Allow: /contact.html
+Allow: /services/
+Allow: /projects/
+Allow: /about/
+
+# Crawl-delay
+Crawl-delay: 10
+
+# Sitemaps
+Sitemap: https://digitalkhargone.in/sitemap.xml
+
+# Block access to specific files and directories
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /*.sql$
+Disallow: /*.zip$
+Disallow: /*.env
+Disallow: /wp-admin/
+Disallow: /wp-includes/
