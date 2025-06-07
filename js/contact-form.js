@@ -1,12 +1,34 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Get form elements
+document.addEventListener('DOMContentLoaded', () => {
+    // Add notification container to body
+    document.body.insertAdjacentHTML('beforeend', `
+        <div class="notification-container" id="notificationContainer">
+            <div class="notification">
+                <div class="notification-header">
+                    <div class="notification-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h3 class="notification-title">Thank You!</h3>
+                </div>
+                <p class="notification-message">
+                    We've received your details. Our team will contact you shortly via WhatsApp or phone call.
+                </p>
+                <div class="notification-actions">
+                    <a href="index.html" class="back-to-home">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Home
+                    </a>
+                    <button class="notification-close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    `);
+
     const contactForm = document.getElementById('contactForm');
-    
-    // Check if we're on the contact page
-    if (!contactForm) {
-        console.log('Contact form not found - not on contact page');
-        return;
-    }
+    const notificationContainer = document.getElementById('notificationContainer');
+
+    if (!contactForm) return;
 
     // Form submission handler
     contactForm.addEventListener('submit', async function(e) {
@@ -53,9 +75,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 throw new Error(`Server error: ${response.status}`);
             }
 
-            // Show success message
-            alert('Form submitted successfully!');
+            // Show success notification
+            const notification = notificationContainer.querySelector('.notification');
+            notificationContainer.style.transform = 'translateX(0)';
+            notification.classList.add('show');
+
+            // Reset form
             contactForm.reset();
+
+            // Auto hide notification after 5 seconds
+            setTimeout(() => {
+                notification.classList.remove('show');
+                notificationContainer.style.transform = '';
+            }, 5000);
 
         } catch (error) {
             console.error('Form submission error:', error);
@@ -65,4 +97,14 @@ document.addEventListener('DOMContentLoaded', function() {
             if (submitBtn) submitBtn.disabled = false;
         }
     });
+
+    // Close notification on button click
+    const closeBtn = document.querySelector('.notification-close');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            const notification = notificationContainer.querySelector('.notification');
+            notification.classList.remove('show');
+            notificationContainer.style.transform = '';
+        });
+    }
 });
