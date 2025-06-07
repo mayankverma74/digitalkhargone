@@ -84,10 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             contactForm.reset();
 
             // Auto hide notification after 5 seconds
-            setTimeout(() => {
-                notification.classList.remove('show');
-                notificationContainer.style.transform = '';
-            }, 5000);
+           
 
         } catch (error) {
             console.error('Form submission error:', error);
@@ -102,9 +99,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.querySelector('.notification-close');
     if (closeBtn) {
         closeBtn.addEventListener('click', () => {
-            const notification = notificationContainer.querySelector('.notification');
-            notification.classList.remove('show');
-            notificationContainer.style.transform = '';
+            notificationContainer.classList.remove('show');
+        });
+    }
+
+    // Close notification when clicking "Back to Home"
+    const backHomeBtn = document.querySelector('.back-to-home');
+    if (backHomeBtn) {
+        backHomeBtn.addEventListener('click', () => {
+            notificationContainer.classList.remove('show');
         });
     }
 });
