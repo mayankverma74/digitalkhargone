@@ -1964,3 +1964,307 @@ html {
         transition-delay: 300ms;  /* Longer delay for better distinction */
     }
 }
+
+
+
+/* Show 3D model only on desktop */
+@media (min-width: 1024px) {
+    .robot-3d {
+        display: block;
+    }
+    
+    .code-window {
+        opacity: 0.8;
+    }
+}
+
+/* Keep code window prominent on mobile */
+@media (max-width: 1023px) {
+    .robot-3d {
+        display: none;
+    }
+    
+    .code-window {
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero-content {
+    max-width: 55vw;
+    margin-left: 0;
+    margin-right: auto;
+  }
+  .hero-features {
+    max-width: 55vw;
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .code-window {
+    max-width: 55vw;
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+    .hero {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: calc(var(--nav-height) + 2rem) 8% 2rem;
+    }
+
+    .hero-content {
+        flex: 0 1 50%;
+    }
+
+    .hero-visual {
+        flex: 0 1 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .robot-3d {
+        width: 200%;
+        height: 600px;
+        position: relative;
+    }
+
+    .spline-robot {
+        width: 100%;
+        height: 100%;
+    }
+
+    .code-window {
+        margin-top: 2rem;
+    }
+}
+
+/* Hide 3D model on mobile */
+@media screen and (max-width: 1023px) {
+    .robot-3d {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .hero {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: calc(var(--nav-height) + 2rem) 8% 2rem;
+    }
+
+    .hero-content {
+        flex: 0 1 50%;
+    }
+
+    .hero-visual {
+        flex: 0 1 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .robot-3d {
+        width: 100%;
+        height: 500px;
+        position: relative;
+    }
+
+    .spline-robot {
+        width: 100%;
+        height: 100%;
+        transform: scale(1.2);
+    }
+
+    .code-window {
+        display: none;  /* Hide code window on desktop */
+    }
+}
+@media screen and (min-width: 1024px) {
+
+
+    .robot-3d {
+        width: 100%;
+        height: 500px;
+        position: relative;
+        transform: translateX(35%);  /* Move robot 20% to the right */
+    }
+
+    .spline-robot {
+        width: 100%;
+        height: 100%;
+        transform: scale(1.3);
+    }
+
+    
+}
+@media screen and (min-width: 1024px) {
+    
+
+    .spline-robot {
+        width: 100%;
+        height: 100%;
+        transform: scale(1.3);  /* Increased from 1.1 to 1.3 for larger size */
+    }
+
+    
+}
+@media screen and (min-width: 1024px) {
+    .hero {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: calc(var(--nav-height) + 2rem) 12% 2rem;  /* Increased horizontal padding */
+    }
+
+    .hero-content {
+        flex: 0 1 45%;  /* Reduced width to prevent stretching */
+        margin-top: -5%;  /* Move content slightly up */
+    }
+
+    .main-title {
+        font-size: 3.2rem;  /* Larger title on desktop */
+        line-height: 1.2;
+        margin-bottom: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .hero-features {
+        grid-template-columns: repeat(3, 1fr);  /* Force 3 columns */
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .hero-visual {
+        flex: 0 1 50%;
+        margin-left: 5%;  /* Add some space between content and visual */
+    }
+}
+@media screen and (min-width: 1024px) {
+    .hero {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: calc(var(--nav-height) + 2rem) 3% 2rem;  /* Reduced from 12% to 5% */
+    }
+
+    .hero-content {
+        flex: 0 1 45%;
+        margin-top: -5%;
+        padding-left: 3%;  /* Add some padding from the very edge */
+    }
+
+    .hero-features {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        max-width: 90%;  /* Prevent features from stretching too wide */
+    }
+
+    .hero-visual {
+        flex: 0 1 50%;
+        margin-left: 5%;
+        transform: translateX(5%);  /* Slight adjustment to maintain robot position */
+    }
+}
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem;
+    border: 1px solid rgba(255, 192, 203, 0.3);  /* Light pink border */
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add neon border effect */
+.feature::before,
+.feature::after {
+    content: '';
+    position: absolute;
+    background: linear-gradient(90deg, 
+        transparent,
+        rgb(255, 0, 128),  /* Hot pink neon color */
+        transparent
+    );
+}
+
+.feature::before {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    animation: neonBorderX 3s linear infinite;
+}
+
+.feature::after {
+    right: 0;
+    top: -100%;
+    width: 2px;
+    height: 100%;
+    animation: neonBorderY 3s linear infinite 0.75s;
+}
+
+/* Animations for the neon border effect */
+@keyframes neonBorderX {
+    0% { left: -100%; }
+    50%, 100% { left: 100%; }
+}
+
+@keyframes neonBorderY {
+    0% { top: -100%; }
+    50%, 100% { top: 100%; }
+}
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem;
+    border: 1px solid rgba(255, 192, 203, 0.2);
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add neon border effect */
+.feature::before,
+.feature::after {
+    content: '';
+    position: absolute;
+    background: linear-gradient(90deg, 
+        transparent,
+        rgba(255, 105, 180, 0.8),  /* Neon pink color */
+        transparent
+    );
+    filter: blur(2px); 
+    box-shadow: 0 0 8px rgba(255, 31, 98, 0.6); 
+    /* Add slight blur for glow effect */
+}
+
+.feature::before {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2.5px;  /* Increased from 1px to 2.5px */
+    animation: neonBorderX 3s linear infinite;
+}
+
+.feature::after {
+    right: 0;
+    top: -100%;
+    width: 2.5px;  /* Increased from 1px to 2.5px */
+    height: 100%;
+    animation: neonBorderY 3s linear infinite 0.75s;
+}
