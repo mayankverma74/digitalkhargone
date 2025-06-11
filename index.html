@@ -76,6 +76,11 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.2/build/spline-viewer.js"></script>
+    <!-- In the head section -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<!-- Before closing body tag -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body>
     <!-- Add this at the start of body -->
@@ -192,9 +197,9 @@
     </main>
 
     <section class="projects" id="projects">
-        <div class="section-header">
-            <h2 class="section-title animate-in">Our Projects</h2>
-            <p class="section-subtitle animate-in">Currently Working on -</p>
+        <div class="showcase-header1">
+            <h2 class="section-title ">Our Projects</h2>
+            <p class="section-subtitle ">Currently Working on -</p>
         </div>
         
         <div class="project-slider">
@@ -202,7 +207,7 @@
             <div class="project-card animate-in">
                 <div class="project-content">
                     <h3>Modern School Website</h3>
-                    <p>Interactive educational platform with student portal</p>
+                    <p>Interactive educational platform with student portal</p><!-- Why Choose Us Section -->
                     <div class="tech-stack">
                         <div class="tech-icon">
                             <i class="devicon-react-original colored"></i>
@@ -219,7 +224,7 @@
                     </div>
                 </div>
             </div>
-
+       
             <!-- Luxury Jewelry E-commerce -->
             <div class="project-card animate-in">
                 <div class="project-content">
@@ -357,7 +362,7 @@
     <section class="about" id="about">
         <div class="about-header">
             <h2 class="section-title animate-in">Our Story</h2>
-            <p class="section-subtitle animate-in">The Vision Behind DigitalKhargone.in</p>
+          
         </div>
     
         <div class="about-container">
@@ -420,7 +425,7 @@
     <section class="technologies" id="technologies">
     <div class="section-header">
         <h2 class="section-title animate-in">Expert in Cutting-Edge Technologies</h2>
-        <p class="section-subtitle animate-in">Tools We've Mastered</p>
+        
     </div>
 
     <div class="tech-container">
@@ -488,7 +493,79 @@
         </div>
     </div>
 </section>
+<section class="why-choose-us">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Why To Choose Us</h2>
+    
+    <div class="content-wrapper">
+      <div class="text-content" data-aos="fade-right">
+        <p>At DigitalKhargone.in, we are not just another web agency — we are a passionate team of tech experts proudly rooted in Khargone. What makes us truly different is our commitment to delivering modern, feature-rich websites and digital solutions at a much more budget-friendly cost than typical agencies., we bring your vision to life with advanced technologies, including 3D elements, animated models.
 
+Our team consists of highly qualified developers and designers who are not only skilled in traditional web development but also masters in cutting-edge tools and frameworks,. We chose the name "DigitalKhargone" to reflect our deep love and connection with our hometown, and our goal is to bring big-city tech solutions to our local businesses and entrepreneurs.
+
+</p>
+      </div>
+      
+      
+        
+<div class="stats-container">
+  <!-- Existing stat items -->
+  <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+    <div class="stat-label">Crafting digital solutions that fit your goals perfectly</div>
+    <div class="progress-bar">
+      <div class="progress" data-value="80">
+        <div class="glow"></div>
+      </div>
+    </div>
+    <div class="percentage">90%</div>
+  </div> 
+
+  <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+    <div class="stat-label">You get a user-friendly backend to update content, images, or services anytime</div>
+    <div class="progress-bar">
+      <div class="progress" data-value="90">
+        <div class="glow"></div>
+      </div>
+    </div>
+    <div class="percentage">95%</div>
+  </div>
+
+  <!-- New stat items -->
+  <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+    <div class="stat-label">Advanced 3D Integration & WebGL Expertise</div>
+    <div class="progress-bar">
+      <div class="progress" data-value="95">
+        <div class="glow"></div>
+      </div>
+    </div>
+    <div class="percentage">95%</div>
+  </div>
+
+  <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+    <div class="stat-label">Cost-Effective Solutions Compared to Market Average</div>
+    <div class="progress-bar">
+      <div class="progress" data-value="85">
+        <div class="glow"></div>
+      </div>
+    </div>
+    <div class="percentage">97%</div>
+  </div>
+
+  <div class="stat-item" data-aos="fade-up" data-aos-delay="500">
+    <div class="stat-label">Expert Team with Cutting-Edge Tech Skills</div>
+    <div class="progress-bar">
+      <div class="progress" data-value="92">
+        <div class="glow"></div>
+      </div>
+    </div>
+    <div class="percentage">92%</div>
+  </div>
+</div>
+        <!-- Add other stat items similarly -->
+      </div>
+    </div>
+  </div>
+</section>
     <script>
         // Update the Menu Toggle code
         const menuToggle = document.querySelector('.menu-toggle');
@@ -749,5 +826,177 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     techObserver.observe(techSection);
-</script>
+    // Initialize AOS
+// Initialize AOS
+AOS.init({
+  duration: 800,
+  once: true,
+  mirror: false,
+  disable: 'mobile'
+});
 
+document.addEventListener('DOMContentLoaded', () => {
+  const statsContainer = document.querySelector('.stats-container');
+  
+  // Progress bar animation
+  const animateProgressBars = () => {
+    const progressBars = document.querySelectorAll('.progress');
+    progressBars.forEach(progress => {
+      const value = progress.getAttribute('data-value');
+      progress.style.willChange = 'width';
+      progress.style.width = value + '%';
+      
+      setTimeout(() => {
+        progress.style.willChange = 'auto';
+      }, 1500);
+    });
+  }
+
+  // Create observer inside the DOMContentLoaded event
+  const progressObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateProgressBars();
+        progressObserver.unobserve(entry.target);
+      }
+    });
+  }, { 
+    threshold: 0.2,
+    rootMargin: '50px'
+  });
+
+  if (statsContainer) {
+    progressObserver.observe(statsContainer);
+  }
+});
+document.addEventListener('DOMContentLoaded', () => {
+  const statsContainer = document.querySelector('.stats-container');
+  
+  // Progress bar and percentage counter animation
+  const animateProgressBars = () => {
+    const progressBars = document.querySelectorAll('.progress');
+    progressBars.forEach(progress => {
+      const value = parseInt(progress.getAttribute('data-value'));
+      const percentageElement = progress.closest('.stat-item').querySelector('.percentage');
+      
+      progress.style.willChange = 'width';
+      progress.style.width = '0%';
+      
+      // Start percentage from 0
+      let currentPercent = 0;
+      
+      setTimeout(() => {
+        progress.style.transition = 'width 3s ease-in-out';
+        progress.style.width = value + '%';
+        
+        // Animate percentage counter
+        const duration = 3000; // 3 seconds
+        const steps = 100;
+        const increment = value / steps;
+        const stepTime = duration / steps;
+        
+        const counter = setInterval(() => {
+          currentPercent += increment;
+          if (currentPercent >= value) {
+            currentPercent = value;
+            clearInterval(counter);
+          }
+          percentageElement.textContent = Math.round(currentPercent) + '%';
+        }, stepTime);
+      }, 200);
+      
+      setTimeout(() => {
+        progress.style.willChange = 'auto';
+      }, 3200);
+    });
+  }
+
+  const progressObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateProgressBars();
+        progressObserver.unobserve(entry.target);
+      }
+    });
+  }, { 
+    threshold: 0.2,
+    rootMargin: '50px'
+  });
+
+  if (statsContainer) {
+    progressObserver.observe(statsContainer);
+  }
+});
+// Add this to your existing JavaScript
+document.addEventListener('DOMContentLoaded', () => {
+  // Add highlight spans to important words
+  const textContent = document.querySelector('.text-content');
+  if (textContent) {
+    const words = ['personalized approach', 'cost-effective', 'high-quality', 'scalable results'];
+    let html = textContent.innerHTML;
+    words.forEach(word => {
+      const regex = new RegExp(word, 'gi');
+      html = html.replace(regex, `<span class="highlight-text">${word}</span>`);
+    });
+    textContent.innerHTML = html;
+  }
+
+  // Add scroll-based animations
+  const addInViewClass = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(addInViewClass, {
+    threshold: 0.3
+  });
+
+  // Observe text content and stat items
+  document.querySelectorAll('.text-content, .stat-item').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Add touch ripple effect
+  const addRippleEffect = (e) => {
+    const ripple = document.createElement('div');
+    ripple.classList.add('ripple');
+    e.currentTarget.appendChild(ripple);
+
+    const rect = e.currentTarget.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = e.touches[0].clientX - rect.left - size / 2;
+    const y = e.touches[0].clientY - rect.top - size / 2;
+
+    ripple.style.width = ripple.style.height = `${size}px`;
+    ripple.style.left = `${x}px`;
+    ripple.style.top = `${y}px`;
+    
+
+    setTimeout(() => ripple.remove(), 500);
+  };
+
+  // Add ripple effect to stat items
+  document.querySelectorAll('.stat-item').forEach(item => {
+    item.addEventListener('touchstart', addRippleEffect);
+  });
+});
+document.addEventListener('DOMContentLoaded', () => {
+  // Debug logs
+  console.log('Section Title:', document.querySelector('.section-title'));
+  console.log('Section Header:', document.querySelector('.section-header'));
+  console.log('Projects Section:', document.querySelector('.projects'));
+
+  // Check computed styles
+  const titleElement = document.querySelector('.section-title');
+  if (titleElement) {
+    const styles = window.getComputedStyle(titleElement);
+    console.log('Title Display:', styles.display);
+    console.log('Title Visibility:', styles.visibility);
+    console.log('Title Opacity:', styles.opacity);
+    console.log('Title Z-index:', styles.zIndex);
+  }
+});
+</script>
