@@ -1551,7 +1551,7 @@ html {
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
-    animation: autoFlip 6s infinite;
+    animation: autoFlip 12s infinite;
 }
 
 .founder-card.founder-front,
@@ -1571,10 +1571,10 @@ html {
 }
 
 @keyframes autoFlip {
-    0%, 45% {
+    0%, 70% {
         transform: rotateY(0deg);
     }
-    50%, 95% {
+    75%, 95% {
         transform: rotateY(180deg);
     }
     100% {
@@ -1646,7 +1646,7 @@ html {
     height: 100%;
     text-align: center;
     transform-style: preserve-3d;
-    animation: autoFlip 6s infinite;
+    animation: autoFlip 15s infinite;
 }
 
 .founder-card.founder-front,
@@ -2408,32 +2408,8 @@ html {
     color: #fff;
 }
 
-/* Mobile-specific styles */
-@media (max-width: 768px) {
-    .notification-container {
-        top: 50%;
-        left: 50%;
-        bottom: auto;
-        right: auto;
-        transform: translate(-50%, -50%) scale(0.8);
-        width: 90%;
-        max-width: 320px;
-        opacity: 0;
-        visibility: hidden;
-    }
 
-    .notification-container.show {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-        visibility: visible;
-    }
 
-    .notification {
-        width: 100%;
-        border: 1px solid rgba(0, 255, 136, 0.3);
-        box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
-    }
-}
 .technologies {
     padding: 4rem 2rem;
     background: #000;
@@ -2492,13 +2468,7 @@ html {
         #0088ff,
         #00ff88
     );
-    -webkit-mask: 
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    background-size: 300% 100%;
-    animation: borderAnimation 3s linear infinite;
+    
 }
 
 @keyframes borderAnimation {
@@ -2689,62 +2659,7 @@ html {
   animation: neonPulse 3s infinite;
 }
 
-/* Mobile @media (max-width: 480px) {
-    .technologies {
-        padding: 2rem 1rem;
-    }
-    
-    .tech-card {
-        padding: 1rem;
-    }
-    
-    .tech-card img {
-        width: 40px;
-        height: 40px;
-    }
-}
-.technologies .section-title {
-    background: linear-gradient(90deg, #ff00ff, #8080ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 1rem;
-}
 
-.technologies .section-subtitle {
-    color: #fff;
-    font-size: 1.2rem;
-    text-align: center;
-    opacity: 0.9;
-    margin-bottom: 3rem;
-}
-
-.frameworks-section h3 {
-    color: #fff;
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    background: linear-gradient(90deg, #ff00ff, #8080ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-.technologies .section-title {
-    background: linear-gradient(90deg, #ff00ff, #8080ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-/* Backend section heading */
 .frameworks-section:nth-child(1) h3 {
     background: linear-gradient(90deg, #00ff88, #00ffee);
     -webkit-background-clip: text;
@@ -2876,12 +2791,7 @@ html {
         transparent 60%,
         #00ff88 100%
     );
-    -webkit-mask: 
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    animation: borderRotate 3s linear infinite;
+   
 }
 
 @keyframes borderRotate {
@@ -3415,15 +3325,15 @@ html {
   left: 50%;
   transform: translateX(-50%);
   width: 100px;
-  height: 3px;
+  height: 2px;
   background: #ff416c;
   box-shadow: 0 0 10px #ff416c, 0 0 20px #ff416c;
 }
 
 .showcase-subtitle {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #b0b0b0;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 /* Mobile responsiveness */

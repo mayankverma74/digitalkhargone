@@ -5,7 +5,21 @@ const path = require('path');
 require('dotenv').config();
 
 const app = express();
+const compression = require('compression');
 
+// Add performance optimizations
+app.use(compression()); // Add GZIP compression
+app.use(express.static('public', {
+  maxAge: '1y',
+  etag: true
+}));
+
+// Add performance headers
+app.use((req, res, next) => {
+  res.setHeader('Cache-Control', 'public, max-age=31536000');
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  next();
+});
 // Middleware with correct CORS configuration
 app.use(cors({
     origin: ['https://digitalkhargone.in', 'http://localhost:3000'],
