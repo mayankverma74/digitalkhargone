@@ -202,7 +202,7 @@
     <section class="projects" id="projects">
         <div class="showcase-header1">
             <h2 class="section-title ">Our Projects</h2>
-            <p class="section-subtitle ">Currently Working on -</p>
+            <p class="currenlty">Currently Working on -</p>
         </div>
         
         <div class="project-slider">
@@ -1024,5 +1024,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }, { passive: true });
     });
+    let isScrolling;
+const buttons = document.querySelectorAll('button, a');  // Select all buttons and links
+
+document.addEventListener('scroll', function() {
+    // Disable all buttons/links
+    buttons.forEach(button => {
+        button.style.pointerEvents = 'none';
+    });
+
+    // Clear the existing timeout
+    clearTimeout(isScrolling);
+
+    // Set a timeout to re-enable buttons after scrolling stops
+    isScrolling = setTimeout(function() {
+        buttons.forEach(button => {
+            button.style.pointerEvents = 'auto';
+        });
+    }, 150); // Waits 100ms after scrolling stops
+}, { passive: true });
 });
 </script>
