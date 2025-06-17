@@ -2369,7 +2369,7 @@ html {
     opacity: 1;
 }
 
-@media (max-width: 768px) {
+
    @media (max-width: 768px) {
     .notification-container {
         top: auto;
@@ -2385,7 +2385,7 @@ html {
         transform: translateY(0);     /* Only transform Y axis when showing */
     }
 }
-}
+
 /* Modern Notification Styles */
 .notification-container {
     position: fixed;
