@@ -790,6 +790,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </footer>
 <script>
+ 
     // Technologies section animation
     const techSection = document.querySelector('.technologies');
     const techHeader = document.querySelector('.technologies .section-header');
@@ -1071,4 +1072,27 @@ document.addEventListener('touchend', function() {
         });
     }, 100);
 }, { passive: true });
+ const serviceCTAButtons = document.querySelectorAll('.service-cta');
+
+    serviceCTAButtons.forEach(button => {
+        button.addEventListener('touchstart', (e) => {
+            let touchStartY = e.touches[0].clientY;  // Declared inside the function
+        
+            button.addEventListener('touchmove', (e) => {
+                const touchMoveY = e.touches[0].clientY;
+                if (Math.abs(touchMoveY - touchStartY) > 5) {
+                    e.preventDefault();
+                    button.classList.add('scrolling');
+                }
+            });
+        });
+
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (!button.classList.contains('scrolling')) {
+                setTimeout(() => window.location.href='contact.html', 100);
+            }
+            button.classList.remove('scrolling');
+        });
+    });
 </script>
