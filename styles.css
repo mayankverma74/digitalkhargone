@@ -2373,7 +2373,7 @@ html {
     .notification-container {
         top: auto;
         bottom: 20px;
-        right: 50%;
+        right: 30%;
         transform: translate(50%, 150%);
         width: 90%;
         max-width: 400px;

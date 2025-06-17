@@ -9,6 +9,10 @@ const compression = require('compression');
 
 // Add performance optimizations
 app.use(compression()); // Add GZIP compression
+// Within your Express app setup
+app.get('/index.html', (req, res) => {
+    res.redirect(301, '/');
+});
 app.use(express.static('public', {
   maxAge: '1y',
   etag: true
