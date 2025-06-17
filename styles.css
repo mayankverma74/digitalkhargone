@@ -2370,22 +2370,21 @@ html {
 }
 
 @media (max-width: 768px) {
+   @media (max-width: 768px) {
     .notification-container {
         top: auto;
         bottom: 20px;
-        right: 30%;
-        transform: translate(50%, 150%);
+        right: 0;           /* Reset right position */
+        left: 20px;         /* Add left margin */
+        transform: translateY(150%);  /* Only transform Y axis */
         width: 90%;
         max-width: 400px;
     }
 
-    .notification {
-        width: 100%;
+    .notification-container.show {
+        transform: translateY(0);     /* Only transform Y axis when showing */
     }
-
-    .notification.show {
-        transform: translate(50%, 0);
-    }
+}
 }
 /* Modern Notification Styles */
 .notification-container {
