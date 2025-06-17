@@ -1044,4 +1044,31 @@ document.addEventListener('scroll', function() {
     }, 150); // Waits 100ms after scrolling stops
 }, { passive: true });
 });
+const buttons = document.querySelectorAll('button, a');
+let touchStartY = 0;
+let touchEndY = 0;
+const threshold = 10; // minimum pixel difference to consider it a scroll
+
+document.addEventListener('touchstart', function(e) {
+    touchStartY = e.touches[0].clientY;
+}, { passive: true });
+
+document.addEventListener('touchmove', function(e) {
+    touchEndY = e.touches[0].clientY;
+    if (Math.abs(touchEndY - touchStartY) > threshold) {
+        // If scrolling detected, prevent clicks
+        buttons.forEach(button => {
+            button.style.pointerEvents = 'none';
+        });
+    }
+}, { passive: true });
+
+document.addEventListener('touchend', function() {
+    // Re-enable buttons after touch ends
+    setTimeout(() => {
+        buttons.forEach(button => {
+            button.style.pointerEvents = 'auto';
+        });
+    }, 100);
+}, { passive: true });
 </script>
