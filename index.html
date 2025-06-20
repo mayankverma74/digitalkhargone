@@ -775,7 +775,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="https://instagram.com/digitalkhargone.in/" class="social-link" target="_blank">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/digital-khargone-b89157368/" class="social-link" target="_blank">
+                <a href="https://www.linkedin.com/company/digitalkhargone/" class="social-link" target="_blank">
                     <i class="fab fa-linkedin"></i>
                 </a>
                 <a href="https://x.com/DigitalKhargone" class="social-link" target="_blank">
@@ -1072,19 +1072,22 @@ document.addEventListener('touchend', function() {
         });
     }, 100);
 }, { passive: true });
- const serviceCTAButtons = document.querySelectorAll('.service-cta');
+ 
+    const serviceCTAButtons = document.querySelectorAll('.service-cta');
 
     serviceCTAButtons.forEach(button => {
+        let touchStartY = 0;  // Moved here so both events can access it
+
         button.addEventListener('touchstart', (e) => {
-            let touchStartY = e.touches[0].clientY;  // Declared inside the function
-        
-            button.addEventListener('touchmove', (e) => {
-                const touchMoveY = e.touches[0].clientY;
-                if (Math.abs(touchMoveY - touchStartY) > 5) {
-                    e.preventDefault();
-                    button.classList.add('scrolling');
-                }
-            });
+            touchStartY = e.touches[0].clientY;
+            button.classList.remove('scrolling');
+        });
+
+        button.addEventListener('touchmove', (e) => {
+            const touchMoveY = e.touches[0].clientY;
+            if (Math.abs(touchMoveY - touchStartY) > 5) {
+                button.classList.add('scrolling');
+            }
         });
 
         button.addEventListener('click', (e) => {
@@ -1092,7 +1095,7 @@ document.addEventListener('touchend', function() {
             if (!button.classList.contains('scrolling')) {
                 setTimeout(() => window.location.href='contact.html', 100);
             }
-            button.classList.remove('scrolling');
         });
     });
+
 </script>
