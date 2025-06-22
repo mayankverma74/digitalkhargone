@@ -98,5 +98,30 @@
 
     <!-- Add this before closing body tag -->
     <script src="js/contact-form.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('source') === 'portfolio') {
+            const websiteTypeSelect = document.getElementById('websiteType');
+            if (websiteTypeSelect) {
+                // Change the label and options for service type
+                websiteTypeSelect.innerHTML = `
+                    <option value="">Select Editing Service Type</option>
+                    <option value="video-editing">Professional Video Editing</option>
+                    <option value="graphic-designing">Graphic Designing</option>
+                    <option value="seo-optimization">SEO Optimization</option>
+                `;
+            }
+
+            const budgetSelect = document.getElementById('budget');
+            if (budgetSelect) {
+                // Change the text for budget options
+                budgetSelect.querySelector('option[value="starter"]').textContent = 'Low Budget';
+                budgetSelect.querySelector('option[value="premium"]').textContent = 'Moderate Budget';
+                budgetSelect.querySelector('option[value="ultra"]').textContent = 'High Budget';
+            }
+        }
+    });
+    </script>
 </body>
 </html>

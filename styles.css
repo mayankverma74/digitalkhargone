@@ -158,20 +158,25 @@ body {
     z-index: 10;
     display: inline-block;
     padding: 1rem 2rem;
-    background: linear-gradient(45deg, var(--primary-dark), var(--primary));
-    color: var(--background);
+    background: linear-gradient(45deg, #9500ff, #6a00ff);
+    color: #fff;
     text-decoration: none;
     border-radius: 30px;
     font-weight: 600;
     font-size: 1rem;
-    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+    box-shadow: 0 0 20px rgba(149, 0, 255, 0.2);
+    border: 2px solid #9500ff;
     transition: all 0.3s ease;
+    margin-left: 0.5rem;
 }
 
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+    box-shadow: 0 0 30px #9500ff;
+    background: linear-gradient(45deg, #6a00ff, #9500ff);
+    color: #fff;
 }
+
 
 .hero-content {
     position: relative;
@@ -3354,4 +3359,34 @@ html {
 .showcase-title:hover::after {
   width: 150px;
   transition: width 0.3s ease;
+}
+
+.editing-button {
+    position: relative;
+    z-index: 10;
+    display: inline-block;
+    padding: 1rem 2rem;
+    background:transparent;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 0 20px rgba(149, 0, 255, 0.2);
+    border: 2px solid #9500ff;
+    transition: all 0.3s ease;
+    margin-left: 0.5rem;
+}
+
+.editing-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px #9500ff;
+    background: linear-gradient(45deg, #6a00ff, #9500ff);
+    color: #fff;
+}
+
+@media (max-width: 1023px) {
+  .editing-button {
+    display: none !important;
+  }
 }

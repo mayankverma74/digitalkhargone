@@ -172,8 +172,10 @@
                         <span class="feature-text">Budget Friendly</span>
                     </div>
                 </div>
-                <!-- Update this line in your hero section -->
-                <a href="contact.html" class="cta-button">Start Your Digital Journey</a>
+                <div class="hero-buttons" style="display: flex; gap: 1rem;">
+                    <a href="contact.html" class="cta-button">Start Your Digital Journey</a>
+                    <a href="portfolio.html" class="editing-button">Our Editing Services</a>
+                </div>
             </div>
             <div class="hero-visual">
                 <!-- Add the 3D robot model -->
@@ -719,6 +721,25 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
     <script src="js/contact-form.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    var editingBtn = document.querySelector('.editing-button');
+    if (editingBtn) {
+        editingBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            var loader = document.querySelector('.loader-container');
+            var mainContent = document.querySelector('main');
+            if (mainContent) mainContent.style.opacity = '0';
+            loader.style.display = 'flex';
+            loader.style.opacity = '1';
+            document.body.style.overflow = 'hidden';
+            setTimeout(function() {
+                window.location.href = 'portfolio.html';
+            }, 1900);
+        });
+    }
+});
+</script>
 </body>
 </html>
 <footer class="footer">
