@@ -705,6 +705,37 @@
         @media (max-width: 700px) {
             .other-testimonials-title { font-size: 2.2rem; }
         }
+        .editing-button {
+   
+position: relative;
+z-index: 10;
+display: inline-block;
+padding: 1rem 2rem;
+background: transparent;
+color: #fff;
+text-decoration: none;
+border-radius: 30px;
+transition: all 0.3s ease;
+box-shadow: 0 0 20px rgba(149, 0, 255, 0.2);
+margin-left: 1rem;
+border: 2px solid #9500ff;
+}
+
+.editing-button:hover {
+    color: #ae6cff;
+    text-shadow: 0 0 8px #c58aff;
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px #9500ff;
+    background: linear-gradient(45deg, #c58aff, #9500ff);
+    color: #fff;
+}
+
+@media (max-width: 1023px) {
+  .editing-button {
+    display: none !important;
+  }
+}
+
     </style>
 </head>
 <body>
