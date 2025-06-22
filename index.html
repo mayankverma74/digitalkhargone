@@ -983,8 +983,8 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Add ripple effect to stat items
-  document.querySelectorAll('.stat-item').forEach(item => {
-    item.addEventListener('touchstart', addRippleEffect);
+ document.querySelectorAll('.stat-item').forEach(item => {
+    item.addEventListener('touchstart', addRippleEffect,{passive: true });
   });
 });
 document.addEventListener('DOMContentLoaded', () => {
@@ -1075,27 +1075,27 @@ document.addEventListener('touchend', function() {
  
     const serviceCTAButtons = document.querySelectorAll('.service-cta');
 
-    serviceCTAButtons.forEach(button => {
-        let touchStartY = 0;  // Moved here so both events can access it
+   serviceCTAButtons.forEach(button => {
+    let touchStartY = 0;
+    
+    button.addEventListener('touchstart', (e) => {
+        touchStartY = e.touches[0].clientY;
+        button.classList.remove('scrolling');
+    }, { passive: true });
 
-        button.addEventListener('touchstart', (e) => {
-            touchStartY = e.touches[0].clientY;
-            button.classList.remove('scrolling');
-        });
+    button.addEventListener('touchmove', (e) => {
+        const touchMoveY = e.touches[0].clientY;
+        if (Math.abs(touchMoveY - touchStartY) > 5) {
+            button.classList.add('scrolling');
+        }
+    }, { passive: true });
 
-        button.addEventListener('touchmove', (e) => {
-            const touchMoveY = e.touches[0].clientY;
-            if (Math.abs(touchMoveY - touchStartY) > 5) {
-                button.classList.add('scrolling');
-            }
-        });
-
-        button.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (!button.classList.contains('scrolling')) {
-                setTimeout(() => window.location.href='contact.html', 100);
-            }
-        });
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (!button.classList.contains('scrolling')) {
+            setTimeout(() => window.location.href='contact.html', 100);
+        }
     });
 
+   });
 </script>
