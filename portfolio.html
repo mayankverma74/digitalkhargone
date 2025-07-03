@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepak Karma | Co-founder DigitalKhargone.in</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: #0a0c1b;
+            color: #fff;
+            font-family: 'Inter', 'Montserrat', Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(10, 12, 27, 0.98);
+            box-shadow: 0 2px 16px 0 rgba(0,0,0,0.18);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem 6vw 1rem 6vw;
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            display: block;
+        }
+        .brand-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #00ff88;
+            letter-spacing: 1px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+        .nav-link {
+            color: #bdbdbd;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            position: relative;
+            transition: color 0.2s;
+        }
+        .nav-link:hover {
+            color: #00ff88;
+        }
+        .hero-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .hero-section {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            position: relative;
+            z-index: 1;
+            padding: 2rem 0 0 0;
+        }
+        .hero-left {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 1.5rem;
+            position: relative;
+            max-width: 520px;
+            margin-left: 200px;
+            margin-top: 80px;
+        }
+        .vertical-accent {
+            position: absolute;
+            left: -40px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #a259ff 0%, #00ff88 100%);
+            border-radius: 2px;
+        }
+        .accent-dot {
+            position: absolute;
+            left: -48px;
+            top: 0;
+            width: 18px;
+            height: 18px;
+            background: #a259ff;
+            border-radius: 50%;
+            box-shadow: 0 0 16px #a259ff99;
+        }
+        .hero-hi {
+            font-size: 3.6rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.1;
+        }
+        .hero-name {
+            font-size: 4.8rem;
+            font-weight: 900;
+            color: #a259ff;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+        .hero-desc {
+            font-size: 1.7rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        .typewriter {
+            font-size: 1.6rem;
+            color: #fff;
+            min-height: 2.2rem;
+            margin-bottom: 2.5rem;
+            letter-spacing: 1px;
+            font-family: 'Fira Mono', 'Consolas', monospace;
+            font-weight: 700;
+        }
+        .resume-btn {
+            display: inline-block;
+            padding: 0.7rem 2.2rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #00ff88;
+            background: #111;
+            border: 2px solid #00ff88;
+            border-radius: 30px;
+            box-shadow: 0 0 18px #00ff88, 0 0 32px #00ff8855;
+            letter-spacing: 1px;
+            margin-top: 1.2rem;
+            text-decoration: none;
+            position: relative;
+            transition: box-shadow 0.3s, color 0.3s, border 0.3s, background 0.3s;
+        }
+        .resume-btn::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 40px;
+            background: radial-gradient(circle, #00ff88 0%, transparent 70%);
+            opacity: 0.5;
+            z-index: 0;
+            filter: blur(6px);
+        }
+        .resume-btn span {
+            position: relative;
+            z-index: 1;
+        }
+        .resume-btn:hover {
+            color: #fff;
+            border-color: #fff;
+            box-shadow: 0 0 32px #00ff88, 0 0 64px #00ff88;
+        }
+        .hero-right {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-top: 80px;
+        }
+        .photo-outer {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: #181c2e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 0 8px #fff, 0 8px 32px rgba(162,89,255,0.15);
+            position: relative;
+        }
+        .photo-brush {
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            left: 5%;
+            top: 5%;
+            z-index: 1;
+        }
+        .photo-img {
+            width: 85%;
+            height: 85%;
+            object-fit: cover;
+            border-radius: 50%;
+            z-index: 2;
+            position: relative;
+        }
+        @media (max-width: 1100px) {
+            .hero-section { flex-direction: column; gap: 2.5rem; }
+            .hero-left, .hero-right { align-items: center; text-align: center; max-width: 100%; margin-left: 0; margin-top: 0; }
+            .vertical-accent, .accent-dot { display: none; }
+            .hero-right { margin-top: 0; }
+        }
+        @media (max-width: 700px) {
+            .header { flex-direction: column; gap: 1.5rem; padding: 1.2rem 2vw 0.5rem 2vw; }
+            .main-section, .about-section { padding-top: 90px; }
+            .hero-hi { font-size: 2rem; }
+            .hero-name { font-size: 2.5rem; }
+            .photo-outer { width: 180px; height: 180px; }
+            .photo-img { width: 80%; height: 80%; }
+        }
+        .about-section {
+            max-width: 1200px;
+            margin: 4rem auto 0 auto;
+            padding: 0 0.5rem 4rem 0.5rem;
+        }
+        .about-label {
+            color: #bdbdbd;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.7rem;
+        }
+        .about-title {
+            font-size: 3.8rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 1.5rem;
+        }
+        .about-desc {
+            color: #bdbdbd;
+            font-size: 1.45rem;
+            line-height: 1.7;
+            margin-bottom: 4rem;
+            max-width: 900px;
+        }
+        .about-desc strong {
+            color: #fff; 
+        }
+        .about-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3.5rem;
+        }
+        .about-card {
+            background: #181c2e;
+            border-radius: 18px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 32px 0 #3b82f660;
+            padding: 3.2rem 1.5rem 2.2rem 1.5rem;
+            text-align: center;
+            border: none;
+            transition: box-shadow 0.3s, border 0.3s, transform 0.3s, opacity 0.7s;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        .about-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 18px;
+            padding: 2px;
+            background: linear-gradient(135deg, #3b82f6, #a259ff);
+        
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .about-card > * {
+            position: relative;
+            z-index: 2;
+        }
+        .about-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .about-card .about-icon {
+            font-size: 4.2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .about-card .about-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.7rem;
+        }
+        @media (max-width: 900px) {
+            .about-title { font-size: 2.5rem; }
+            .about-section { padding: 0 1rem 2rem 1rem; }
+            .about-cards { grid-template-columns: 1fr 1fr; gap: 2rem; }
+        }
+        @media (max-width: 600px) {
+            .about-title { font-size: 1.5rem; }
+            .about-cards { grid-template-columns: 1fr; gap: 1.2rem; }
+        }
+        .main-section, .about-section {
+            padding-top: 110px;
+        }
+        @media (max-width: 700px) {
+            .main-section { padding-top: 90px; }
+        }
+        .main-section {
+            padding-top: 240px;
+        }
+        @media (max-width: 700px) {
+            .main-section { padding-top: 130px; }
+        }
+        .learnt-section {
+            max-width: 1200px;
+            margin: 5rem auto 0 auto;
+            padding: 0 0.5rem 4rem 0.5rem;
+        }
+        .learnt-label {
+            color: #bdbdbd;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.7rem;
+            text-align: center;
+        }
+        .learnt-title {
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+        .learnt-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            justify-content: center;
+        }
+        .learnt-box {
+            background: #10121a;
+            border-radius: 18px;
+            border: 2px solid #3b82f6;
+            box-shadow: 0 0 32px 0 #3b82f660;
+            padding: 1.5rem 1rem 1.2rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 200px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: box-shadow 0.3s, border 0.3s, transform 0.7s, opacity 0.7s;
+        }
+        .learnt-box.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .learnt-box .learnt-box-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1.5rem;
+        }
+        .learnt-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem 1.2rem;
+            justify-content: center;
+        }
+        .learnt-icon {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #23243a;
+            border-radius: 12px;
+            padding: 0.6rem 1.2rem;
+            font-size: 1.1rem;
+            color: silver;
+            border: 1.5px solid #3b82f6;
+            box-shadow: 0 0 8px #3b82f655;
+            font-weight: 400;
+            transition: border 0.2s, box-shadow 0.2s;
+        }
+        .learnt-icon img {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+        }
+        .learnt-icon svg {
+            width: 28px;
+            height: 28px;
+        }
+        .learnt-row2 {
+            grid-column: 1 / span 2;
+            display: flex;
+            justify-content: center;
+        }
+        .learnt-box:last-child {
+            width: 60%;
+            margin: 0 auto;
+        }
+        @media (max-width: 900px) {
+            .learnt-title { font-size: 2.2rem; }
+            .learnt-grid { grid-template-columns: 1fr; }
+            .learnt-row2 { grid-column: 1; }
+            .learnt-box:last-child { width: 100%; }
+        }
+        @media (max-width: 600px) {
+            .learnt-title { font-size: 1.5rem; }
+            .learnt-box { padding: 1.2rem 0.5rem; }
+            .learnt-icons { gap: 0.7rem 0.7rem; }
+        }
+        .learnt-box.learnt-row2 {
+            min-height: 200px;
+            padding-top: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .projects-section {
+            max-width: 1400px;
+            margin: 6rem auto 0 auto;
+            padding: 0 1rem 6rem 1rem;
+        }
+        .projects-header {
+            margin-bottom: 3.5rem;
+        }
+        .projects-label {
+            color: #bdbdbd;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.7rem;
+        }
+        .projects-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 1.2rem;
+        }
+        .projects-desc {
+            color: #bdbdbd;
+            font-size: 1.25rem;
+            line-height: 1.7;
+            max-width: 800px;
+        }
+        .projects-carousel-wrapper {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            margin-top: 2.5rem;
+        }
+        .projects-carousel-js {
+            display: flex;
+            gap: 2.5rem;
+            width: max-content;
+            transition: transform 0.3s;
+        }
+        .project-card {
+            background: #181c2e;
+            border-radius: 24px;
+            box-shadow: 0 0 32px 0 #3b82f660;
+            width: 350px;
+            min-width: 350px;
+            max-width: 350px;
+            padding-bottom: 2.2rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            transition: box-shadow 0.3s, transform 0.3s;
+            position: relative;
+        }
+        .project-card:hover {
+            box-shadow: 0 0 48px 0 #a259ff99, 0 8px 32px rgba(162,89,255,0.15);
+            transform: translateY(-8px) scale(1.03);
+        }
+        .project-img {
+            width: 100%;
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 18px 18px 0 0;
+            margin-bottom: 1.2rem;
+        }
+        .project-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #fff;
+            margin: 0 0 0.3rem 0;
+        }
+        .project-type {
+            font-size: 1rem;
+            color: #a259ff;
+            font-weight: 700;
+            margin-bottom: 0.7rem;
+        }
+        .project-desc {
+            color: #bdbdbd;
+            font-size: 1.05rem;
+            line-height: 1.5;
+        }
+        @media (max-width: 1200px) {
+            .project-card, .project-card {
+                width: 300px;
+                min-width: 300px;
+                max-width: 300px;
+            }
+            .projects-carousel-js {
+                gap: 1.5rem;
+            }
+        }
+        @media (max-width: 900px) {
+            .projects-title { font-size: 2.2rem; }
+            .projects-section { padding: 0 0.5rem 3rem 0.5rem; }
+            .project-card, .project-card {
+                width: 240px;
+                min-width: 240px;
+                max-width: 240px;
+            }
+            .projects-carousel-js {
+                gap: 1rem;
+            }
+            .project-img { height: 120px; }
+        }
+        @media (max-width: 700px) {
+            .projects-title { font-size: 1.5rem; }
+            .projects-header { margin-bottom: 2rem; }
+            .projects-section { padding: 0 0.2rem 2rem 0.2rem; }
+            .project-card, .project-card {
+                width: 90vw;
+                min-width: 90vw;
+                max-width: 90vw;
+            }
+            .projects-carousel-js {
+                gap: 0.7rem;
+            }
+            .project-img { height: 90px; }
+        }
+        .testimonial-section {
+            max-width: 1200px;
+            margin: 6rem auto 0 auto;
+            padding: 0 1rem 6rem 1rem;
+            text-align: center;
+        }
+        .testimonial-label {
+            color: #bdbdbd;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.7rem;
+        }
+        .testimonial-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 3.5rem;
+        }
+        .testimonial-card {
+            background: linear-gradient(145deg, #1e2238, #141624);
+            border-radius: 24px;
+            box-shadow: 0 0 64px 0 #a259ff44, 0 16px 64px rgba(162,89,255,0.1);
+            padding: 3.5rem 2.5rem;
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid #a259ff55;
+            opacity: 0;
+            transform: translateY(40px) scale(0.95);
+            transition: opacity 0.7s, transform 0.7s;
+        }
+        .testimonial-card.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        .testimonial-text p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: #bdbdbd;
+            margin-bottom: 1.5rem;
+        }
+        .testimonial-text p:last-of-type {
+            font-style: italic;
+            color: #00ff88;
+            font-weight: 500;
+        }
+        .testimonial-quote {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #fff;
+            font-style: italic;
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid #a259ff33;
+        }
+        .quote-author {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #bdbdbd;
+            margin-top: 0.7rem;
+            font-style: normal;
+        }
+        @media (max-width: 900px) {
+            .testimonial-title { font-size: 2.2rem; }
+            .testimonial-card { padding: 2.5rem 1.5rem; }
+            .testimonial-text p { font-size: 1.1rem; }
+            .testimonial-quote { font-size: 1.3rem; }
+        }
+        .other-testimonials-section {
+            max-width: 1400px;
+            margin: 6rem auto 0 auto;
+            padding: 0 1rem 6rem 1rem;
+        }
+        .other-testimonials-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+        .other-testimonials-label {
+            color: #bdbdbd;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.7rem;
+        }
+        .other-testimonials-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #fff;
+        }
+        .other-testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+        .other-testimonial-card {
+            background: #181c2e;
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            border: 1px solid #3b82f644;
+            box-shadow: 0 0 32px 0 rgba(59, 130, 246, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s, transform 0.7s;
+        }
+        .other-testimonial-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .testimonial-quote-icon {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #3b82f6;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        .testimonial-card-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #bdbdbd;
+            flex-grow: 1;
+            margin-bottom: 2rem;
+        }
+        .testimonial-author-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #3b82f688;
+        }
+        .author-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        .author-title {
+            font-size: 0.9rem;
+            color: #bdbdbd;
+        }
+        @media (max-width: 1100px) {
+            .other-testimonials-grid {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+        @media (max-width: 700px) {
+            .other-testimonials-title { font-size: 2.2rem; }
+        }
+        .editing-button {
+   
+position: relative;
+z-index: 10;
+display: inline-block;
+padding: 1rem 2rem;
+background: transparent;
+color: #fff;
+text-decoration: none;
+border-radius: 30px;
+transition: all 0.3s ease;
+box-shadow: 0 0 20px rgba(149, 0, 255, 0.2);
+margin-left: 1rem;
+border: 2px solid #9500ff;
+}
+
+.editing-button:hover {
+    color: #ae6cff;
+    text-shadow: 0 0 8px #c58aff;
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px #9500ff;
+    background: linear-gradient(45deg, #c58aff, #9500ff);
+    color: #fff;
+}
+
+@media (max-width: 1023px) {
+  .editing-button {
+    display: none !important;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <svg class="logo-icon" viewBox="0 0 40 40"><path d="M5 20 L20 5 L35 20 L20 35 Z" fill="#00ff88"/><path d="M12 20 L20 12 L28 20 L20 28 Z" fill="none" stroke="#00ff88" stroke-width="2"/><circle cx="20" cy="20" r="3" fill="#00ff88"/></svg>
+            <a href="https://digitalkhargone.in" target="_blank" class="brand-name"><span style="color:#fff;">Digital</span>Khargone.in</a>
+        </div>
+        <nav class="nav-links">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#tools" class="nav-link">Tools</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="contact.html?source=portfolio" class="nav-link">Contact</a>
+        </nav>
+    </header>
+    <div class="hero-bg">
+        <!-- SVG neon lines/waves background -->
+        <svg width="100%" height="100%" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,400 Q400,200 800,400 T1600,400" stroke="#a259ff" stroke-width="2" fill="none" opacity="0.13"/>
+            <path d="M0,600 Q400,800 800,600 T1600,600" stroke="#00ff88" stroke-width="2" fill="none" opacity="0.13"/>
+            <path d="M0,200 Q400,0 800,200 T1600,200" stroke="#a259ff" stroke-width="2" fill="none" opacity="0.09"/>
+            <path d="M0,800 Q400,1000 800,800 T1600,800" stroke="#00ff88" stroke-width="2" fill="none" opacity="0.09"/>
+        </svg>
+    </div>
+    <section class="hero-section">
+        <div class="hero-left">
+            <span class="vertical-accent"></span>
+            <span class="accent-dot"></span>
+            <div class="hero-hi">Hi, I'm</div>
+            <div class="hero-name">Deepak</div>
+            <div class="hero-desc">I am a</div>
+            <div class="typewriter" id="typewriter"></div>
+            <a href="https://digitalkhargone.in" class="resume-btn" target="_blank"><span><span style="color:#a259ff;">Co-founder at</span> <span style="color:#fff;">Digital</span>Khargone.in</span></a>
+        </div>
+        <div class="hero-right">
+            <div class="photo-outer">
+                <svg class="photo-brush" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30,100 Q60,20 100,40 Q140,60 170,100 Q140,180 100,160 Q60,140 30,100 Z" fill="#6a7b8a"/>
+                </svg>
+                <!-- Replace src with your image -->
+                <img src="https://i.ibb.co/LdpDLBbY/cofounder.jpg" alt="Deepak Karma" class="photo-img" />
+            </div>
+        </div>
+    </section>
+    <section class="about-section" id="about">
+        <div class="about-label">INTRODUCTION</div>
+        <div class="about-title">Overview.</div>
+        <div class="about-desc">
+            I'm a creative professional specializing in <strong>video editing</strong>, <strong>graphic design</strong>, <strong>business growth strategies</strong>, and <strong>SEO optimization</strong>. I help brands and creators tell compelling stories, build strong visual identities, and grow their digital presence. <strong>Let's collaborate to turn your vision into a powerful, results-driven reality!</strong>
+        </div>
+        <div class="about-cards">
+            <div class="about-card">
+                <div class="about-icon">🎬</div>
+                <div class="about-title">Professional Video Editor</div>
+            </div>
+            <div class="about-card">
+                <div class="about-icon">🎨</div>
+                <div class="about-title">Graphic Designer</div>
+            </div>
+            <div class="about-card">
+                <div class="about-icon">🚀</div>
+                <div class="about-title">Business Growth Strategist</div>
+            </div>
+            <div class="about-card">
+                <div class="about-icon">📈</div>
+                <div class="about-title">SEO Optimization</div>
+            </div>
+        </div>
+    </section>
+    <section class="learnt-section" id="tools">
+        <div class="learnt-label">Skills</div>
+        <div class="learnt-title">What I Learnt.</div>
+        <div class="learnt-grid">
+            <!-- Box 1: Professional Video Editing -->
+            <div class="learnt-box">
+                <div class="learnt-box-title">Professional Video Editing</div>
+                <div class="learnt-icons">
+                    <span class="learnt-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-original.svg" alt="Premiere Pro">Premiere Pro</span>
+                    <span class="learnt-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-original.svg" alt="After Effects">After Effects</span>
+                    <span class="learnt-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/davinciresolve.svg" alt="DaVinci Resolve">DaVinci Resolve</span>
+                    <span class="learnt-icon"><img src="https://icons.iconarchive.com/icons/thebadsaint/my-mavericks-part-2/128/Final-Cut-Pro-X-icon.png" alt="Final Cut Pro">Final Cut Pro</span>
+                    <span class="learnt-icon">
+                        <!-- Filmora SVG Inline -->
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="28" viewBox="0,0,256,256"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.33333,5.33333)"><path d="M15,6h18c4.971,0,9.4,4.029,9.9,18c0.4,4.971 -4.029,9.9,-9h-18c-4.971,0,-9.4,-4.029,-9.9,-18c0.4,-4.971,4.029,-9.9,9,-9z" fill="#19b2ff"></path><path d="M21.9,17.7l5.5,5.5c0.828,0.829 0.828,2.171 0,3l-5.8,5.8z" fill="#ffffff"></path><path d="M29.532,17.5l-14.532,14.483l7.042,7.017l14.532,-14.483z" fill="#1de9b6"></path></g></g></svg>
+                        Filmora
+                    </span>
+                    <span class="learnt-icon"><img src="https://www.svgrepo.com/show/504203/capcut.svg" alt="CapCut icon" width="32" height="32">CapCut</span>
+                </div>
+            </div>
+            <!-- Box 2: Graphic Designing -->
+            <div class="learnt-box">
+                <div class="learnt-box-title">Graphic Designing</div>
+                <div class="learnt-icons">
+                    <span class="learnt-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Photoshop">Photoshop</span>
+                    <span class="learnt-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" alt="Illustrator">Illustrator</span>
+                    <span class="learnt-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">Figma</span>
+                    <span class="learnt-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/canva.svg" alt="Canva">Canva</span>
+                    <span class="learnt-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-plain.svg" alt="Adobe XD">Adobe XD</span>
+                    <span class="learnt-icon">
+                        <!-- InDesign SVG Inline -->
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="28" viewBox="0 0 48 48">
+                            <linearGradient id="SVGID_1__gUF3Nv0TJHjn_gr1" x1="39.328" x2="8.672" y1="8.672" y2="39.328" gradientUnits="userSpaceOnUse">
+                                <stop offset="0" stop-color="#fe6ac5"></stop>
+                                <stop offset=".033" stop-color="#fe60c1"></stop>
+                                <stop offset=".197" stop-color="#fe97d7"></stop>
+                                <stop offset=".362" stop-color="#ffbde5"></stop>
+                                <stop offset=".525" stop-color="#fffaf0"></stop>
+                                <stop offset=".687" stop-color="#ffeef9"></stop>
+                                <stop offset=".846" stop-color="#fffbfd"></stop>
+                                <stop offset="1" stop-color="#fff"></stop>
+                            </linearGradient>
+                            <path fill="url(#SVGID_1__gUF3Nv0TJHjn_gr1)" d="M36.5,40.5h-25c-2.209,0-4-1.791-4-4v-25c0-2.209,1.791-4,4-4h25c2.209,0,4,1.791,4,4v25C40.5,38.709,38.709,40.5,36.5,40.5z"></path>
+                            <path fill="none" stroke="#fa2aab" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M27.926,40.5H11.5c-2.209,0-4-1.791-4-4v-25c0-2.209,1.791-4,4-4h1.372"></path>
+                            <path fill="none" stroke="#fa2aab" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19.34,7.5H36.5c2.209,0,4,1.791,4,4v25c0,2.209-1.791,4-4,4h-2.702"></path>
+                            <line x1="18.5" x2="18.5" y1="16.5" y2="31.5" fill="none" stroke="#fa2aab" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></line>
+                            <path fill="none" stroke="#fa2aab" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M30.5,16.5l-15,0c-2.485,0-4.5,2.015-4.5,4.5l0,0c0,2.485,2.015,4.5,4.5,4.5h2.5"></path>
+                        </svg>
+                        InDesign
+                    </span>
+                    <span class="learnt-icon"><img src="https://www.svgrepo.com/download/508792/corel-draw.svg" alt="CorelDRAW logo" width="32" height="32">CorelDRAW</span>
+                </div>
+            </div>
+            <!-- Box 3: SEO Optimization -->
+            <div class="learnt-box learnt-row2">
+                <div class="learnt-box-title">SEO Optimization</div>
+                <div class="learnt-icons">
+                    <span class="learnt-icon"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googleanalytics.svg" alt="Google Analytics">Google Analytics</span>
+                    <span class="learnt-icon"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/semrush.svg" alt="SEMrush">SEMrush</span>
+                    <span class="learnt-icon"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/yoast.svg" alt="Yoast">Yoast</span>
+                    <span class="learnt-icon"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlesearchconsole.svg" alt="Google Search Console">Google Search Console</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Projects Section: Modern Auto-Sliding Carousel -->
+    <section class="projects-section" id="projects">
+        <div class="projects-header">
+            <div class="projects-label">MY WORK</div>
+            <div class="projects-title">Projects.</div>
+            <div class="projects-desc">
+                Explore a curated selection of projects that highlight my expertise as a Professional Video Editor, Graphic Designer, and SEO Specialist. Each project demonstrates my ability to craft compelling visuals, deliver creative design solutions, and drive measurable results through strategic SEO. These works reflect my passion for storytelling, eye for design, and commitment to digital growth.
+            </div>
+        </div>
+        <div class="projects-carousel-wrapper">
+            <div class="projects-carousel-js">
+                <!-- Project Card 1 -->
+                <div class="project-card">
+                    <div class="project-img" style="background-image:url('https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80');"></div>
+                    <div class="project-title">Dynamic Promo Video</div>
+                    <div class="project-type">Video Editing</div>
+                    <div class="project-desc">A fast-paced promotional video crafted for a modern brand, featuring seamless transitions, motion graphics, and energetic music sync.</div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="project-card">
+                    <div class="project-img" style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80');"></div>
+                    <div class="project-title">Brand Identity Kit</div>
+                    <div class="project-type">Graphic Design</div>
+                    <div class="project-desc">A complete branding solution including logo, color palette, and social media templates for a startup, ensuring a cohesive visual identity.</div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="project-card">
+                    <div class="project-img" style="background-image:url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80');"></div>
+                    <div class="project-title">SEO Growth Campaign</div>
+                    <div class="project-type">SEO Optimization</div>
+                    <div class="project-desc">Implemented on-page and off-page SEO strategies, resulting in a 200% increase in organic traffic for a local business website.</div>
+                </div>
+                <!-- Project Card 4 -->
+                <div class="project-card">
+                    <div class="project-img" style="background-image:url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80');"></div>
+                    <div class="project-title">Animated Explainer</div>
+                    <div class="project-type">Video Editing</div>
+                    <div class="project-desc">Produced a clear, engaging explainer video using custom graphics and voiceover to simplify a complex product for new users.</div>
+                </div>
+                <!-- Project Card 5 -->
+                <div class="project-card">
+                    <div class="project-img" style="background-image:url('https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=400&q=80');"></div>
+                    <div class="project-title">E-commerce Visuals</div>
+                    <div class="project-type">Graphic Design</div>
+                    <div class="project-desc">Designed product banners, ad creatives, and infographics for an online store, boosting click-through rates and conversions.</div>
+                </div>
+                <!-- Project Card 6 -->
+                <div class="project-card">
+                    <div class="project-img" style="background-image:url('https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80');"></div>
+                    <div class="project-title">YouTube Channel Revamp</div>
+                    <div class="project-type">Video Editing</div>
+                    <div class="project-desc">Revitalized a YouTube channel with new intros, outros, and thumbnail templates, increasing audience retention and engagement.</div>
+                </div>
+                <!-- Project Card 7 -->
+                <div class="project-card">
+                    <div class="project-img" style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80');"></div>
+                    <div class="project-title">Local SEO Audit</div>
+                    <div class="project-type">SEO Optimization</div>
+                    <div class="project-desc">Conducted a comprehensive SEO audit for a local service provider, identifying key improvements and delivering a step-by-step action plan.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="testimonial-section" id="testimonial">
+        <div class="testimonial-content">
+            <div class="testimonial-label">A WORD FROM MY PARTNER</div>
+            <div class="testimonial-title">What My Co-founder Says.</div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    <p>"Hey, I'm Mayank, the founder of DigitalKhargone.in. People often call Deepak (or as I know him, Deepu) my business partner, but that word doesn't quite capture it. He's been a partner in every moment of happiness and every challenge we've faced since we first met in our college's first year. They say some friends become more than that—two people who share the same mind, the same vision. That connection is what brought DigitalKhargone.in to life."</p>
+                    <p>"This very website is a testament to our bond, a project I built for him to showcase the incredible talent I get to witness every day."</p>
+                </div>
+                <div class="testimonial-quote">
+                    "Deepak knows the business, and I know the chemistry."
+                    <span class="quote-author">- Mayank Verma, Founder of DigitalKhargone.in</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="other-testimonials-section" id="testimonials-others">
+        <div class="other-testimonials-header">
+            <div class="other-testimonials-label">WHAT OTHERS SAY</div>
+            <div class="other-testimonials-title">Testimonials.</div>
+        </div>
+        <div class="other-testimonials-grid">
+            <!-- Testimonial Card 1 -->
+            <div class="other-testimonial-card">
+                <div class="testimonial-quote-icon">"</div>
+                <div class="testimonial-card-text">"Working with Deepak was a game-changer. His video editing skills brought our vision to life with a level of creativity and polish we hadn't thought possible. Truly exceptional work."</div>
+                <div class="testimonial-author-info">
+                    <img src="https://i.pravatar.cc/150?img=1" alt="Author 1" class="author-img">
+                    <div class="author-details">
+                        <div class="author-name">Alex Johnson</div>
+                        <div class="author-title">Marketing Director, Creative Minds</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial Card 2 -->
+            <div class="other-testimonial-card">
+                <div class="testimonial-quote-icon">"</div>
+                <div class="testimonial-card-text">"Deepak's graphic design work gave our brand a fresh, modern identity. He's not just a designer; he's a visual storyteller who understands market trends. Highly recommended!"</div>
+                <div class="testimonial-author-info">
+                    <img src="https://i.pravatar.cc/150?img=2" alt="Author 2" class="author-img">
+                    <div class="author-details">
+                        <div class="author-name">Samantha Lee</div>
+                        <div class="author-title">Founder, Tech Startup</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial Card 3 -->
+            <div class="other-testimonial-card">
+                <div class="testimonial-quote-icon">"</div>
+                <div class="testimonial-card-text">"The impact of Deepak's SEO strategies on our organic growth was phenomenal. His data-driven approach and attention to detail delivered results that exceeded all our expectations."</div>
+                <div class="testimonial-author-info">
+                    <img src="https://i.pravatar.cc/150?img=3" alt="Author 3" class="author-img">
+                    <div class="author-details">
+                        <div class="author-name">Michael Chen</div>
+                        <div class="author-title">CEO, E-commerce Brand</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+    // Typewriter effect
+    const professions = ["Professional Video Editor", "Cinematic Editor", "Content Creator"];
+    let profIndex = 0, charIndex = 0, isDeleting = false;
+    const typewriter = document.getElementById('typewriter');
+    function type() {
+        const current = professions[profIndex];
+        if (isDeleting) {
+            typewriter.textContent = current.substring(0, charIndex--);
+            if (charIndex < 0) {
+                isDeleting = false;
+                profIndex = (profIndex + 1) % professions.length;
+                setTimeout(type, 600);
+            } else {
+                setTimeout(type, 60);
+            }
+        } else {
+            typewriter.textContent = current.substring(0, charIndex++);
+            if (charIndex > current.length) {
+                isDeleting = true;
+                setTimeout(type, 1200);
+            } else {
+                setTimeout(type, 100);
+            }
+        }
+    }
+    type();
+    // About cards animate-in on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+        const aboutCards = document.querySelectorAll('.about-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, idx) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, idx * 200);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        aboutCards.forEach(card => observer.observe(card));
+    });
+    // Learnt boxes animate-in on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+        const learntBoxes = document.querySelectorAll('.learnt-box');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, idx) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, idx * 250);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        learntBoxes.forEach(box => observer.observe(box));
+    });
+    // JS Auto-sliding Carousel with transform for best performance
+    (function() {
+        const carousel = document.querySelector('.projects-carousel-js');
+        if (!carousel) return;
+        let translateX = 0;
+        const card = carousel.querySelector('.project-card');
+        if (!card) return;
+        const gap = parseInt(getComputedStyle(carousel).gap || 0);
+        const cardWidth = card.offsetWidth + gap;
+        const totalCards = carousel.children.length;
+        // Duplicate cards for seamless loop
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < totalCards; j++) {
+                carousel.appendChild(carousel.children[j].cloneNode(true));
+            }
+        }
+        const visibleCards = 3;
+        const loopWidth = cardWidth * totalCards;
+        function autoSlide() {
+            translateX -= 1; // Negative for leftward movement
+            if (Math.abs(translateX) >= loopWidth) {
+                translateX = 0;
+            }
+            carousel.style.transform = `translateX(${translateX}px)`;
+            requestAnimationFrame(autoSlide);
+        }
+        autoSlide();
+    })();
+    // Testimonial card animate-in on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+        const testimonialCard = document.querySelector('.testimonial-card');
+        if (!testimonialCard) return;
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        observer.observe(testimonialCard);
+    });
+    // Other Testimonials animate-in on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+        const testimonialCards = document.querySelectorAll('.other-testimonial-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, idx) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, idx * 200);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        testimonialCards.forEach(card => observer.observe(card));
+    });
+    </script>
+</body>
+</html>

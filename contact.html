@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - DigitalKhargone.in</title>
+    
+    <!-- Add Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="form-container">
+        <a href="index.html" class="back-home">
+            <i class="fas fa-arrow-left"></i>
+            <span>Back to Home</span>
+        </a>
+        <div class="form-header animate-in">
+            <h2>Start Your Digital Journey</h2>
+            <p>Tell us about your business, and we'll help you grow online</p>
+        </div>
+
+        <form id="contactForm" class="contact-form animate-in">
+            <div class="form-group">
+                <div class="input-wrapper">
+                    <input type="text" id="fullName" required placeholder="Full Name">
+                    <div class="line"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-wrapper">
+                    <input type="tel" id="phone" required placeholder="Phone Number">
+                    <div class="line"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-wrapper">
+                    <input type="email" id="email" placeholder="Email (Optional)">
+                    <div class="line"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="select-wrapper">
+                    <select id="websiteType" required>
+                        <option value="">Select Website Type</option>
+                        <option value="shop">Shop/Business Website</option>
+                        <option value="school">School/College Website</option>
+                        <option value="portfolio">Portfolio Website</option>
+                        <option value="other">Other (including all fields)</option>
+                    </select>
+                    <div class="line"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="select-wrapper">
+                    <select id="budget" required>
+                        <option value="">Select Budget Range</option>
+                        <option value="starter">Starter Website </option>
+                        <option value="premium">Premium Website </option>
+                        <option value="ultra">Ultra Premium Website </option>
+                    </select>
+                    <div class="line"></div>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                <span>Submit</span>
+                <div class="btn-line"></div>
+            </button>
+        </form>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="modal-content animate-in">
+            <div class="success-icon">✨</div>
+            <h3>Thank You!</h3>
+            <p>We've received your details and our team will contact you shortly on WhatsApp or call.</p>
+            <p class="small">Your digital journey begins now!</p>
+            <!-- Add this near the top of the form-container, before the form-header -->
+            <a href="index.html" class="back-arrow">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Add this before closing body tag -->
+    <script src="js/contact-form.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('source') === 'portfolio') {
+            const websiteTypeSelect = document.getElementById('websiteType');
+            if (websiteTypeSelect) {
+                // Change the label and options for service type
+                websiteTypeSelect.innerHTML = `
+                    <option value="">Select Editing Service Type</option>
+                    <option value="video-editing">Professional Video Editing</option>
+                    <option value="graphic-designing">Graphic Designing</option>
+                    <option value="seo-optimization">SEO Optimization</option>
+                `;
+            }
+
+            const budgetSelect = document.getElementById('budget');
+            if (budgetSelect) {
+                // Change the text for budget options
+                budgetSelect.querySelector('option[value="starter"]').textContent = 'Low Budget';
+                budgetSelect.querySelector('option[value="premium"]').textContent = 'Moderate Budget';
+                budgetSelect.querySelector('option[value="ultra"]').textContent = 'High Budget';
+            }
+        }
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>DigitalKhargone.in - Web Solutions</title>
+    <!-- Add before og tags -->
+<link rel="canonical" href="https://digitalkhargone.in">
+<!-- Add before og tags -->
+  <meta property="og:locale" content="en_IN">
+    <!-- Essential Social Media Meta Tags -->
+    <meta property="og:title" content="DigitalKhargone.in - Web Solutions">
+    <meta property="og:description" content="First Ever Professional Web Development Agency in Khargone. Modern Websites. Fast Delivery. Budget Friendly.">
+    <meta property="og:image" content="https://digitalkhargone.in/favicon-192x192.png">
+    <meta property="og:url" content="https://digitalkhargone.in">
+    
+    <!-- Favicon Tags - Complete Set -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Google Search Specific -->
+    <meta itemprop="image" content="https://digitalkhargone.in/favicon-512x512.png">
+    <meta name="msapplication-TileImage" content="/favicon-144x144.png">
+    <meta name="msapplication-TileColor" content="#00ff88">
+    <meta name="theme-color" content="#00ff88">    
+    <!-- Add after charset meta tag -->
+    <meta name="description" content="First Ever Professional Web Development Agency in Khargone. Modern Websites. Fast Delivery. Budget Friendly.">
+    
+    <!-- Rest of your head content -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .loader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .loader-logo {
+            animation: logoScale 1.5s ease-in-out forwards;
+        }
+
+        .loader-text {
+            margin-top: 1rem;
+            font-size: 1.8rem;
+            opacity: 0;
+            animation: textFadeIn 1s ease-out 0.5s forwards;
+        }
+
+        @keyframes logoScale {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes textFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.2/build/spline-viewer.js"></script>
+    <!-- In the head section -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<!-- Before closing body tag -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+    <!-- Add this at the start of body -->
+    <div class="loader-container">
+        <svg class="loader-logo" width="80" height="80" viewBox="0 0 40 40">
+            <path class="logo-path-main" d="M5 20 L20 5 L35 20 L20 35 Z" fill="#00ff88"/>
+            <path class="logo-path-detail" d="M12 20 L20 12 L28 20 L20 28 Z" fill="none" stroke="#00ff88" stroke-width="2"/>
+            <circle cx="20" cy="20" r="3" fill="#00ff88"/>
+        </svg>
+        <div class="loader-text">
+            Digital<span style="color: #00ff88">Khargone</span><span style="opacity: 0.8; color: #00ff88">.in</span>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-wrapper">
+                <svg class="logo-icon" width="40" height="40" viewBox="0 0 40 40">
+                    <path class="logo-path-main" d="M5 20 L20 5 L35 20 L20 35 Z" fill="#00ff88"/>
+                    <path class="logo-path-detail" d="M12 20 L20 12 L28 20 L20 28 Z" fill="none" stroke="#00ff88" stroke-width="2"/>
+                    <circle cx="20" cy="20" r="3" fill="#00ff88"/>
+                </svg>
+            </div>
+            <div class="brand-name">
+                Digital<span class="highlight">Khargone</span><span class="dot-in">.in</span>
+            </div>
+        </div>
+
+        <div class="nav-content">
+            <div class="nav-links">
+                <a href="#" class="nav-link active">
+                    <span class="link-text">Home</span>
+                    <span class="link-hover"></span>
+                </a>
+                <a href="#services" class="nav-link">
+                    <span class="link-text">Services</span>
+                    <span class="link-hover"></span>
+                </a>
+                <a href="#projects" class="nav-link">
+                    <span class="link-text">Projects</span>
+                    <span class="link-hover"></span>
+                </a>
+                <a href="#about" class="nav-link">
+                    <span class="link-text">About Us</span>
+                    <span class="link-hover"></span>
+                </a>
+                <!-- Add the new Technologies link -->
+                <a href="#technologies" class="nav-link">
+                    <span class="link-text">Technologies</span>
+                    <span class="link-hover"></span>
+                </a>
+                <a href="#contact" class="nav-link">
+                    <span class="link-text">Contact</span>
+                    <span class="link-hover"></span>
+                </a>
+            </div>
+        </div>
+
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger"></span>
+        </button>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="main-title">
+                    <span class="line">Digitize Your</span>
+                    <span class="line">Business in</span>
+                    <span class="line highlight-text">Khargone</span>
+                </h1>
+                <p class="hero-subtitle">First Ever Professional Web Development Agency in Khargone</p>
+                <div class="hero-features">
+                    <div class="feature">
+                        <i class="feature-icon fa-solid fa-laptop-code" style="color: #00ff88;"></i>
+                        <span class="feature-text">Modern Website</span>
+                    </div>
+                    
+                    <div class="feature">
+                        <i class="feature-icon devicon-react-plain colored"></i>
+                        <span class="feature-text">Fast Delivery</span>
+                    </div>
+                    
+                    <div class="feature">
+                        <i class="feature-icon devicon-androidstudio-plain colored"></i>
+                        <span class="feature-text">Budget Friendly</span>
+                    </div>
+                </div>
+                <div class="hero-buttons" style="display: flex; gap: 1rem;">
+                    <a href="contact.html" class="cta-button">Start Your Digital Journey</a>
+                    <a href="portfolio.html" class="editing-button">Our Editing Services</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <!-- Add the 3D robot model -->
+                <div class="robot-3d">
+                    <spline-viewer 
+                        url="https://prod.spline.design/BRA9Hw99z9kB9yYE/scene.splinecode"
+                        class="spline-robot">
+                    </spline-viewer>
+                </div>
+                <!-- Keep existing code window -->
+                <div class="code-window">
+                    <div class="code-header">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <div class="code-content">
+                        <div class="typing-text"></div>
+                    </div>
+                </div>
+                <div class="glow-circle"></div>
+            </div>
+        </section>
+    </main>
+
+    <section class="projects" id="projects">
+        <div class="showcase-header1">
+            <h2 class="section-title ">Our Projects</h2>
+            <p class="currenlty">Currently Working on -</p>
+        </div>
+        
+        <div class="project-slider">
+            <!-- Modern School Website -->
+            <div class="project-card animate-in">
+                <div class="project-content">
+                    <h3>Modern School Website</h3>
+                    <p>Interactive educational platform with student portal</p><!-- Why Choose Us Section -->
+                    <div class="tech-stack">
+                        <div class="tech-icon">
+                            <i class="devicon-react-original colored"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="devicon-nodejs-plain colored"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="devicon-mongodb-plain colored"></i>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+            <!-- Luxury Jewelry E-commerce -->
+            <div class="project-card animate-in">
+                <div class="project-content">
+                    <h3>Luxury Jewelry E-commerce</h3>
+                    <p>Premium shopping experience with 3D product views</p>
+                    <div class="tech-stack">
+                        <div class="tech-icon">
+                            <i class="fa-solid fa-cube" style="color: #00ff88;"></i>
+                            <span>Three.js</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="devicon-tailwindcss-plain colored"></i>
+                            <span>Tailwind</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fa-solid fa-n" style="color: #00ff88;"></i>
+                            <span>Next.js</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fashion E-commerce Platform -->
+            <div class="project-card animate-in">
+                <div class="project-content">
+                    <h3>Fashion E-commerce Platform</h3>
+                    <p>Full-featured online shopping platform</p>
+                    <div class="tech-stack">
+                        <div class="tech-icon">
+                            <i class="devicon-typescript-plain colored"></i>
+                            <span>TypeScript</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="devicon-redux-original colored"></i>
+                            <span>Redux</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="devicon-postgresql-plain colored"></i>
+                            <span>PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="services" id="services">
+        <div class="services-header">
+            <h2 class="section-title animate-in">Services We Offered</h2>
+            <p class="section-subtitle animate-in">Choose the Perfect Plan for Your Business</p>
+        </div>
+    
+        <div class="pricing-grid">
+            <!-- Starter Package -->
+            <!-- Update the service-cta links in each pricing card -->
+            <div class="pricing-card animate-in">
+                <div class="light-fixture"></div>
+                <h3>Starter Website</h3>
+                <div class="services-list">
+                    <div class="service-item">
+                        <span class="bullet"></span>
+                        Up to 5 Pages
+                    </div>
+                    <div class="service-item">
+                        <span class="bullet"></span>
+                        Mobile Responsive Design
+                    </div>
+                    <div class="service-item">
+                        <span class="bullet"></span>
+                        Basic SEO
+                    </div>
+                </div>
+                <!-- Update your service CTA buttons -->
+                <a href="contact.html" 
+                   class="service-cta" 
+                   onclick="event.preventDefault(); setTimeout(() => window.location.href='contact.html', 100);">
+                    Get Started
+                </a>
+            </div>
+    
+            <!-- Premium Package -->
+            <div class="pricing-card popular animate-in">
+                <div class="popular-badge">POPULAR</div>
+                <div class="light-fixture"></div>
+                <h3>Premium Website</h3>
+                <div class="services-list">
+                    <div class="service-item">
+                        <span class="bullet"></span>
+                        Up to 15 Pages
+                    </div>
+                    <div class="service-item">
+                        <span class="bullet"></span>
+                        Mobile Responsive Design
+                    </div>
+                    <div class="service-item">
+                        <span class="bullet"></span>
+                        Advanced SEO
+                    </div>
+                </div>
+                <!-- Update your service CTA buttons -->
+                <a href="contact.html" 
+                   class="service-cta" 
+                   onclick="event.preventDefault(); setTimeout(() => window.location.href='contact.html', 100);">
+                    Get Started
+                </a>
+            </div>
+    
+            <!-- Ultra Premium Package -->
+            <div class="pricing-card animate-in">
+                <div class="light-fixture"></div>
+                <h3>Ultra Premium Website</h3>
+                <div class="services-list">
+                    <div class="service-item">
+                        <span class="bullet"></span>
+                        Unlimited Pages
+                    </div>
+                    <div class="service-item">
+                        <span class="bullet"></span>
+                        Mobile Responsive Design
+                    </div>
+                    <div class="service-item">
+                        <span class="bullet"></span>
+                        Advanced SEO & Custom Business Integration
+                    </div>
+                </div>
+                <!-- Update your service CTA buttons -->
+                <a href="contact.html" 
+                   class="service-cta" 
+                   onclick="event.preventDefault(); setTimeout(() => window.location.href='contact.html', 100);">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-header">
+            <h2 class="section-title animate-in">Our Story</h2>
+          
+        </div>
+    
+        <div class="about-container">
+         <!-- Replace the existing founder-card div with this -->
+<div class="founder-card-container animate-in">
+    <div class="founder-card-inner">
+        <!-- Founder Side (Front) -->
+        <div class="founder-card founder-front">
+            <div class="card-glow"></div>
+            <div class="founder-image">
+                <img src="https://i.ibb.co/tw43z4kr/Screenshot-2025-07-03-151304.png" alt="Mayank Verma">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="founder-info">
+                <h3>Mayank Verma</h3>
+                <p class="founder-title">Founder & Developer</p>
+                <p class="founder-education">B.Tech CSE</p>
+            </div>
+        </div>
+
+        <!-- Co-founder Side (Back) -->
+        <div class="founder-card founder-back">
+            <div class="card-glow"></div>
+            <div class="founder-image">
+              <img src="https://i.ibb.co/LdpDLBbY/cofounder.jpg" alt="cofounder" border="0">  
+                <div class="image-overlay"></div>
+            </div>
+            <div class="founder-info">
+                <h3>Deepak Karma</h3>
+                <p class="founder-title">Co-founder & pro video editor</p>
+                <p class="founder-education">B.Tech</p>
+            </div>
+        </div>
+    </div>
+</div>
+    
+            <!-- Vision Content -->
+            <div class="vision-content">
+                <div class="vision-card animate-in">
+                    <div class="vision-icon">💡</div>
+                    <h3>Our Vision</h3>
+                    <p>Making modern web technology accessible to every business in Khargone, regardless of their size or budget.</p>
+                </div>
+    
+                <div class="mission-text animate-in">
+                    <p class="highlight-paragraph">
+                        "We believe every business in Khargone deserves a powerful online presence. Our mission is to bridge the digital divide by providing affordable, professional web solutions."
+                    </p>
+                    <div class="text-content">
+                        <p>As a B.Tech student from Khargone, We witnessed how local businesses struggled to establish their online presence due to high costs and limited access to professional web development services.</p>
+                        <p>DigitalKhargone.in was born from this realization - a platform that makes modern websites accessible to everyone, from small shops to established businesses.</p>
+                        <p>We combine cutting-edge technology with budget-friendly pricing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="technologies" id="technologies">
+    <div class="section-header">
+        <h2 class="section-title animate-in">Expert in Cutting-Edge Technologies</h2>
+        
+    </div>
+
+    <div class="tech-container">
+        <div class="frameworks-container">
+            <!-- Wrap both framework sections -->
+            <div class="frameworks-section">
+                <h3>Back-End Frameworks</h3>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                        <span>Python</span>
+                    </div>
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+                        <span>Java</span>
+                    </div>
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                        <span>Node.JS</span>
+                    </div>
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI">
+                        <span>FastAPI</span>
+                    </div>
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                        <span>MongoDB</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="frameworks-section">
+                <h3>Front-End Frameworks</h3>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React.js">
+                        <span>React JS</span>
+                    </div>
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular">
+                        <span>Angular</span>
+                    </div>
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js">
+                        <span>Vue JS</span>
+                    </div>
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js">
+                        <span>Next JS</span>
+                    </div>
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+                        <span>Bootstrap</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="model-space">
+            <spline-viewer 
+                url="https://prod.spline.design/91TqTGqjCM4cHrts/scene.splinecode"
+                class="tech-chip"
+                events-target="global">
+            </spline-viewer>
+        </div>
+    </div>
+</section>
+<section class="why-choose-us">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Why To Choose Us</h2>
+    
+    <div class="content-wrapper">
+      <div class="text-content" data-aos="fade-right">
+        <p>At DigitalKhargone.in, we are not just another web agency — we are a passionate team of tech experts proudly rooted in Khargone. What makes us truly different is our commitment to delivering modern, feature-rich websites and digital solutions at a much more budget-friendly cost than typical agencies., we bring your vision to life with advanced technologies, including 3D elements, animated models.
+
+        We are not only skilled in traditional web development but also masters in cutting-edge tools and frameworks,. We chose the name "DigitalKhargone" to reflect our deep love and connection with our hometown, and our goal is to bring big-city tech solutions to our local businesses and entrepreneurs.
+
+        </p>
+      </div>
+      
+      
+        
+<div class="stats-container">
+  <!-- Existing stat items -->
+  <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+    <div class="stat-label">Crafting digital solutions that fit your goals perfectly</div>
+    <div class="progress-bar">
+      <div class="progress" data-value="80">
+        <div class="glow"></div>
+      </div>
+    </div>
+    <div class="percentage">90%</div>
+  </div> 
+
+  <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+    <div class="stat-label">You get a user-friendly backend to update content, images, or services anytime</div>
+    <div class="progress-bar">
+      <div class="progress" data-value="90">
+        <div class="glow"></div>
+      </div>
+    </div>
+    <div class="percentage">95%</div>
+  </div>
+
+  <!-- New stat items -->
+  <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+    <div class="stat-label">Advanced 3D Integration & WebGL Expertise</div>
+    <div class="progress-bar">
+      <div class="progress" data-value="95">
+        <div class="glow"></div>
+      </div>
+    </div>
+    <div class="percentage">95%</div>
+  </div>
+
+  <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+    <div class="stat-label">Cost-Effective Solutions Compared to Market Average</div>
+    <div class="progress-bar">
+      <div class="progress" data-value="85">
+        <div class="glow"></div>
+      </div>
+    </div>
+    <div class="percentage">97%</div>
+  </div>
+
+  <div class="stat-item" data-aos="fade-up" data-aos-delay="500">
+    <div class="stat-label">Expert Team with Cutting-Edge Tech Skills</div>
+    <div class="progress-bar">
+      <div class="progress" data-value="92">
+        <div class="glow"></div>
+      </div>
+    </div>
+    <div class="percentage">92%</div>
+  </div>
+</div>
+        <!-- Add other stat items similarly -->
+      </div>
+    </div>
+  </div>
+</section>
+    <script>
+        // Update the Menu Toggle code
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navContent = document.querySelector('.nav-content');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navContent.classList.toggle('show');
+        });
+        
+        // Add this for handling nav links
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Close mobile menu
+                menuToggle.classList.remove('active');
+                navContent.classList.remove('show');
+            });
+        });
+        
+        // Loading Screen
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const loader = document.querySelector('.loader-container');
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 500);
+            }, 2000);
+        });
+
+        // Services Animation
+        const observerOptions = {
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    
+                    if (entry.target.classList.contains('pricing-card')) {
+                        const items = entry.target.querySelectorAll('.service-item, .service-cta');
+                        items.forEach((item, index) => {
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'translateX(0)';
+                            }, index * 200);
+                        });
+                    }
+                    // Add this to your existing IntersectionObserver callback
+                    if (entry.target.classList.contains('footer-section')) {
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, 200);
+                    }
+                    
+                    // Add footer sections to observer
+                    document.querySelectorAll('.footer-section').forEach(el => observer.observe(el));
+                }
+            });
+        }, observerOptions);
+
+        // Add this contact link scroll handler
+        document.querySelector('a[href="#contact"]').addEventListener('click', (e) => {
+            e.preventDefault();
+            const footer = document.querySelector('.footer');
+            footer.scrollIntoView({ behavior: 'smooth' });
+            
+            // Close mobile menu if open
+            menuToggle.classList.remove('active');
+            navContent.classList.remove('show');
+        });
+
+        // Observe all animated elements
+        document.querySelectorAll('.animate-in, .pricing-card').forEach(el => observer.observe(el));
+
+        // Typing Effect
+        const text = "Building digital presence...\nConnecting Khargone online...\nCreating modern websites...";
+        const typingText = document.querySelector('.typing-text');
+        let index = 0;
+        let line = 0;
+        const lines = text.split('\n');
+
+        function type() {
+            if (line >= lines.length) {
+                line = 0;
+                typingText.textContent = '';
+            }
+            
+            if (index < lines[line].length) {
+                typingText.textContent += lines[line].charAt(index);
+                index++;
+                setTimeout(type, 100);
+            } else {
+                setTimeout(() => {
+                    typingText.textContent = '';
+                    index = 0;
+                    line++;
+                    type();
+                }, 2000);
+            }
+        }
+
+        type();
+       document.querySelectorAll('.service-cta').forEach(button => {
+           ['click', 'touchend'].forEach(eventType => {
+               button.addEventListener(eventType, async (e) => {
+                   e.preventDefault();
+                   e.stopPropagation(); // Prevent event bubbling
+                   
+                   const href = e.currentTarget.getAttribute('href'); // Use currentTarget instead of target
+                   
+                   try {
+                       // Show loader
+                       const loader = document.querySelector('.loader-container');
+                       const mainContent = document.querySelector('main');
+                       
+                       // Hide main content immediately
+                       mainContent.style.opacity = '0';
+                       loader.style.display = 'flex';
+                       loader.style.opacity = '1';
+                       
+                       // Prevent scrolling
+                       document.body.style.overflow = 'hidden';
+                       
+                       // Wait for animation and redirect
+                       await new Promise(resolve => setTimeout(resolve, 1900));
+                       window.location.href = href;
+                   } catch (error) {
+                       console.error('Navigation error:', error);
+                       // Fallback direct navigation
+                       window.location.href = href;
+                   }
+               }, { passive: false }); // Important for touch events
+           });
+       });
+    </script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Add animation class to features after a small delay
+    setTimeout(() => {
+        const features = document.querySelectorAll('.feature');
+        features.forEach(feature => {
+            feature.classList.add('animate');
+        });
+    }, 100);
+});
+</script>
+    <script src="js/contact-form.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    var editingBtn = document.querySelector('.editing-button');
+    if (editingBtn) {
+        editingBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            var loader = document.querySelector('.loader-container');
+            var mainContent = document.querySelector('main');
+            if (mainContent) mainContent.style.opacity = '0';
+            loader.style.display = 'flex';
+            loader.style.opacity = '1';
+            document.body.style.overflow = 'hidden';
+            setTimeout(function() {
+                window.location.href = 'portfolio.html';
+            }, 1900);
+        });
+    }
+});
+</script>
+</body>
+</html>
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section animate-in">
+            <div class="footer-logo">
+                <svg class="logo-icon" width="40" height="40" viewBox="0 0 40 40">
+                    <path class="logo-path-main" d="M5 20 L20 5 L35 20 L20 35 Z" fill="#00ff88"/>
+                    <path class="logo-path-detail" d="M12 20 L20 12 L28 20 L20 28 Z" fill="none" stroke="#00ff88" stroke-width="2"/>
+                    <circle cx="20" cy="20" r="3" fill="#00ff88"/>
+                </svg>
+                <h3>DigitalKhargone.in</h3>
+            </div>
+            <p class="footer-tagline">Building Digital Future of Khargone</p>
+        </div>
+
+        <div class="footer-section animate-in">
+            <h4>Contact Us</h4>
+            <div class="contact-info">
+                <div class="info-item">
+                    <span class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                    <a href="mailto:digitalkhargone@gmail.com">digitalkhargone@gmail.com</a>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </span>
+                    <a href="tel:+916266413268">+91 6266 413268</a>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </span>
+                    <span>Khargone, Madhya Pradesh</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-section animate-in">
+            <h4>Quick Links</h4>
+            <nav class="footer-nav">
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#about">About Us</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+
+        <div class="footer-section animate-in social-section">
+            <h4>Connect With Us</h4>
+            <div class="social-links">
+                <a href="https://instagram.com/digitalkhargone.in/" class="social-link" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/digitalkhargone/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://x.com/DigitalKhargone" class="social-link" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2024 DigitalKhargone.in | All Rights Reserved</p>
+    </div>
+</footer>
+<script>
+ 
+    // Technologies section animation
+    const techSection = document.querySelector('.technologies');
+    const techHeader = document.querySelector('.technologies .section-header');
+    const frameworkSections = document.querySelectorAll('.frameworks-section');
+    const techCards = document.querySelectorAll('.tech-card');
+
+    const techObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            // Animate main section
+            techSection.classList.add('animate');
+            
+            // Animate header after 400ms (increased from 200ms)
+            setTimeout(() => {
+                techHeader.classList.add('animate');
+            }, 400);
+
+            // Animate framework sections one after another
+            // Increased delay between sections to 400ms (from 200ms)
+            frameworkSections.forEach((section, index) => {
+                setTimeout(() => {
+                    section.classList.add('animate');
+                }, 800 + (index * 400));
+            });
+
+            // Animate tech cards sequentially
+            // Increased initial delay to 1200ms and delay between cards to 200ms
+            techCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('animate');
+                }, 1200 + (index * 200));
+            });
+
+            techObserver.unobserve(entries[0].target);
+        }
+    }, {
+        threshold: 0.2
+    });
+
+    techObserver.observe(techSection);
+    // Initialize AOS
+// Initialize AOS
+AOS.init({
+  duration: 800,
+  once: true,
+  mirror: false,
+  disable: 'mobile'
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const statsContainer = document.querySelector('.stats-container');
+  
+  // Progress bar animation
+  const animateProgressBars = () => {
+    const progressBars = document.querySelectorAll('.progress');
+    progressBars.forEach(progress => {
+      const value = progress.getAttribute('data-value');
+      progress.style.willChange = 'width';
+      progress.style.width = value + '%';
+      
+      setTimeout(() => {
+        progress.style.willChange = 'auto';
+      }, 1500);
+    });
+  }
+
+  // Create observer inside the DOMContentLoaded event
+  const progressObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateProgressBars();
+        progressObserver.unobserve(entry.target);
+      }
+    });
+  }, { 
+    threshold: 0.2,
+    rootMargin: '50px'
+  });
+
+  if (statsContainer) {
+    progressObserver.observe(statsContainer);
+  }
+});
+document.addEventListener('DOMContentLoaded', () => {
+  const statsContainer = document.querySelector('.stats-container');
+  
+  // Progress bar and percentage counter animation
+  const animateProgressBars = () => {
+    const progressBars = document.querySelectorAll('.progress');
+    progressBars.forEach(progress => {
+      const value = parseInt(progress.getAttribute('data-value'));
+      const percentageElement = progress.closest('.stat-item').querySelector('.percentage');
+      
+      progress.style.willChange = 'width';
+      progress.style.width = '0%';
+      
+      // Start percentage from 0
+      let currentPercent = 0;
+      
+      setTimeout(() => {
+        progress.style.transition = 'width 3s ease-in-out';
+        progress.style.width = value + '%';
+        
+        // Animate percentage counter
+        const duration = 3000; // 3 seconds
+        const steps = 100;
+        const increment = value / steps;
+        const stepTime = duration / steps;
+        
+        const counter = setInterval(() => {
+          currentPercent += increment;
+          if (currentPercent >= value) {
+            currentPercent = value;
+            clearInterval(counter);
+          }
+          percentageElement.textContent = Math.round(currentPercent) + '%';
+        }, stepTime);
+      }, 200);
+      
+      setTimeout(() => {
+        progress.style.willChange = 'auto';
+      }, 3200);
+    });
+  }
+
+  const progressObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateProgressBars();
+        progressObserver.unobserve(entry.target);
+      }
+    });
+  }, { 
+    threshold: 0.2,
+    rootMargin: '50px'
+  });
+
+  if (statsContainer) {
+    progressObserver.observe(statsContainer);
+  }
+});
+// Add this to your existing JavaScript
+document.addEventListener('DOMContentLoaded', () => {
+  // Add highlight spans to important words
+  const textContent = document.querySelector('.text-content');
+  if (textContent) {
+    const words = ['personalized approach', 'cost-effective', 'high-quality', 'scalable results'];
+    let html = textContent.innerHTML;
+    words.forEach(word => {
+      const regex = new RegExp(word, 'gi');
+      html = html.replace(regex, `<span class="highlight-text">${word}</span>`);
+    });
+    textContent.innerHTML = html;
+  }
+
+  // Add scroll-based animations
+  const addInViewClass = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(addInViewClass, {
+    threshold: 0.3
+  });
+
+  // Observe text content and stat items
+  document.querySelectorAll('.text-content, .stat-item').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Add touch ripple effect
+  const addRippleEffect = (e) => {
+    const ripple = document.createElement('div');
+    ripple.classList.add('ripple');
+    e.currentTarget.appendChild(ripple);
+
+    const rect = e.currentTarget.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = e.touches[0].clientX - rect.left - size / 2;
+    const y = e.touches[0].clientY - rect.top - size / 2;
+
+    ripple.style.width = ripple.style.height = `${size}px`;
+    ripple.style.left = `${x}px`;
+    ripple.style.top = `${y}px`;
+    
+
+    setTimeout(() => ripple.remove(), 500);
+  };
+
+  // Add ripple effect to stat items
+ document.querySelectorAll('.stat-item').forEach(item => {
+    item.addEventListener('touchstart', addRippleEffect,{passive: true });
+  });
+});
+document.addEventListener('DOMContentLoaded', () => {
+  // Debug logs
+  console.log('Section Title:', document.querySelector('.section-title'));
+  console.log('Section Header:', document.querySelector('.section-header'));
+  console.log('Projects Section:', document.querySelector('.projects'));
+
+  // Check computed styles
+  const titleElement = document.querySelector('.section-title');
+  if (titleElement) {
+    const styles = window.getComputedStyle(titleElement);
+    console.log('Title Display:', styles.display);
+    console.log('Title Visibility:', styles.visibility);
+    console.log('Title Opacity:', styles.opacity);
+    console.log('Title Z-index:', styles.zIndex);
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+      // Detect mobile
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      
+      // Optimize Spline on mobile
+      if (isMobile && window.spline) {
+        window.spline.setRenderQuality('low');
+      }
+
+      // Optimize scroll performance
+      let ticking = false;
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          window.requestAnimationFrame(function() {
+            if (window.spline) {
+              window.spline.setRenderQuality('low');
+            }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+    });
+    let isScrolling;
+const buttons = document.querySelectorAll('button, a');  // Select all buttons and links
+
+document.addEventListener('scroll', function() {
+    // Disable all buttons/links
+    buttons.forEach(button => {
+        button.style.pointerEvents = 'none';
+    });
+
+    // Clear the existing timeout
+    clearTimeout(isScrolling);
+
+    // Set a timeout to re-enable buttons after scrolling stops
+    isScrolling = setTimeout(function() {
+        buttons.forEach(button => {
+            button.style.pointerEvents = 'auto';
+        });
+    }, 150); // Waits 100ms after scrolling stops
+}, { passive: true });
+});
+const buttons = document.querySelectorAll('button, a');
+let touchStartY = 0;
+let touchEndY = 0;
+const threshold = 10; // minimum pixel difference to consider it a scroll
+
+document.addEventListener('touchstart', function(e) {
+    touchStartY = e.touches[0].clientY;
+}, { passive: true });
+
+document.addEventListener('touchmove', function(e) {
+    touchEndY = e.touches[0].clientY;
+    if (Math.abs(touchEndY - touchStartY) > threshold) {
+        // If scrolling detected, prevent clicks
+        buttons.forEach(button => {
+            button.style.pointerEvents = 'none';
+        });
+    }
+}, { passive: true });
+
+document.addEventListener('touchend', function() {
+    // Re-enable buttons after touch ends
+    setTimeout(() => {
+        buttons.forEach(button => {
+            button.style.pointerEvents = 'auto';
+        });
+    }, 100);
+}, { passive: true });
+ 
+    const serviceCTAButtons = document.querySelectorAll('.service-cta');
+
+   serviceCTAButtons.forEach(button => {
+    let touchStartY = 0;
+    
+    button.addEventListener('touchstart', (e) => {
+        touchStartY = e.touches[0].clientY;
+        button.classList.remove('scrolling');
+    }, { passive: true });
+
+    button.addEventListener('touchmove', (e) => {
+        const touchMoveY = e.touches[0].clientY;
+        if (Math.abs(touchMoveY - touchStartY) > 5) {
+            button.classList.add('scrolling');
+        }
+    }, { passive: true });
+
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (!button.classList.contains('scrolling')) {
+            setTimeout(() => window.location.href='contact.html', 100);
+        }
+    });
+
+   });
+</script>
