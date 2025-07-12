@@ -3391,3 +3391,13 @@ border: 2px solid #9500ff;
     display: none !important;
   }
 }
+
+/* --- TEMP: Hide co-founder card and stop rotation (easy revert) --- */
+.founder-card-inner {
+  animation: none !important;
+  transform: none !important;
+}
+.founder-card.founder-back {
+  display: none !important;
+}
+/* --- END TEMP --- */
